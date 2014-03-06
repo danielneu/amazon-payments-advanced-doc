@@ -45,7 +45,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Pay with Amazon Magento extension'
+project = u'Pay with Amazon - extension for Magento'
 copyright = u'2014 creativestyle GmbH'
 
 # The version info for the project you're documenting, acts as replacement for

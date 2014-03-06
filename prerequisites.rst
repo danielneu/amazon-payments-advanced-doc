@@ -1,8 +1,18 @@
 Prerequisites
 =============
 
+
+System requirements
+-------------------
+
+* Magento 1.5, 1.6, 1.7, 1.8
+* cURL for PHP
+* DOM / XML for PHP
+
+
 Amazon Advanced Payments APIs account setup
 -------------------------------------------
+
 
 Registering an Amazon Payments Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,14 +32,17 @@ Registering an Amazon Payments Account
   * Enter an email address and a password. You should choose a role email address that will be read directly by the people responsible for the Amazon Payments integration. You should avoid general addresses like **info@** that are only forwarded to the general administration.
   * Choose a secure password.
 
+
 .. image:: /images/prerequisites_screenshot_2.png
 
 * Please fill in all requested information about your seller account, your contact information and your bank account or credit card data.
 * Please be careful to provide exact and correct data. All information you provide will be verified by Amazon Payments, and incorrect information will delay the verification process.
 
+
 .. image:: /images/prerequisites_screenshot_3.png
 
 * After providing all information there will be an identity check on the phone, where you will be asked to enter a PIN.
+
 
 .. image:: /images/prerequisites_screenshot_4.png
 
@@ -39,6 +52,7 @@ Registering an Amazon Payments Account
 
 * After your account is registered you will be forwarded to your Seller Central account.
 * Please be aware that you cannot fully use your account yet. First you have to provide your identity data, and then the account has to go through the verification process.
+
 
 Entering identity data in Seller Central
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -53,10 +67,12 @@ At :menuselection:`Settings --> Account Info` please provide the requested missi
 
 .. image:: /images/prerequisites_screenshot_7.png
 
+
 Verification Process / Verification of all given information by Amazon Payments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After successful registration of the Amazon Payments seller account and entering the ID information Amazon Payments will check all information provided. Depending on the information provided Amazon Payments may request more information.
+
 
 Creating MWS access keys
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -82,6 +98,7 @@ The AWS Access Key and the Secret Key among with the Merchant ID, will be presen
 
 .. image:: /images/prerequisites_screenshot_13.png
 
+
 Where to find the required credentials to configure the Magento extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -96,6 +113,8 @@ Magento extension requires you to enter information about your Amazon Payments a
 
 You can find this information in your Amazon Payments seller account in Seller Central.
 
+
+
 .. _prerequisites-obtaining-merchant-id:
 
 Merchant ID
@@ -105,6 +124,8 @@ You can find the Merchant ID in Seller Central at :menuselection:`Setting --> In
 
 .. image:: /images/prerequisites_screenshot_14.png
 
+
+
 .. _prerequisites-obtaining-access-and-secret-key:
 
 AWS Access Key / Secret Key
@@ -113,6 +134,8 @@ AWS Access Key / Secret Key
 You can find the AWS Access Key and the Secret Key in Seller Central at :menuselection:`Integration --> MWS Access Key`
 
 .. image:: /images/prerequisites_screenshot_15.png
+
+
 
 Configuration required in Seller Central
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
