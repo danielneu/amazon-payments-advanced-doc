@@ -5,10 +5,14 @@ Prerequisites
 System requirements
 -------------------
 
+**Pay with Amazon** Magento extension requires you to have a valid Amazon Advanced Payments APIs account (refer to the :ref:`prerequisites-amazon-account-setup` if you don't have one yet) and a webserver running a Magento store instance with following conditions met:
+
 * Magento 1.5, 1.6, 1.7, 1.8
 * cURL for PHP
 * DOM / XML for PHP
 
+
+.. _prerequisites-amazon-account-setup:
 
 Amazon Advanced Payments APIs account setup
 -------------------------------------------
@@ -32,17 +36,14 @@ Registering an Amazon Payments Account
   * Enter an email address and a password. You should choose a role email address that will be read directly by the people responsible for the Amazon Payments integration. You should avoid general addresses like **info@** that are only forwarded to the general administration.
   * Choose a secure password.
 
-
 .. image:: /images/prerequisites_screenshot_2.png
 
 * Please fill in all requested information about your seller account, your contact information and your bank account or credit card data.
 * Please be careful to provide exact and correct data. All information you provide will be verified by Amazon Payments, and incorrect information will delay the verification process.
 
-
 .. image:: /images/prerequisites_screenshot_3.png
 
 * After providing all information there will be an identity check on the phone, where you will be asked to enter a PIN.
-
 
 .. image:: /images/prerequisites_screenshot_4.png
 
@@ -102,7 +103,7 @@ The AWS Access Key and the Secret Key among with the Merchant ID, will be presen
 Where to find the required credentials to configure the Magento extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Magento extension requires you to enter information about your Amazon Payments account. You will need to enter:
+The Magento extension requires you to enter information about your Amazon Payments account. You will need to enter:
 
 * Merchant ID (aka Merchant Number, Händlernummer, Händler-ID)
 
