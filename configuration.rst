@@ -107,6 +107,8 @@ Developer options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For the testing or debugging purposes you can restrict access to **Pay with Amazon** checkout in your shop to certain IP numbers only. **Pay with Amazon** buton will be shown then only for the visitors comming from allowed IPs. You can set more than one allowed IP, enter them separated with comma.
 
+.. _configuration-logs:
+
 :guilabel:`Enable logging`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Pay with Amazon extension comes with dedicated logging mechanism. Any exception, API call or IPN request will be saved to the var/log/amazonpayments folder in your Magento installation. For your convenience logs are also accessible via :menuselection:`creativestyle --> Amazon Payments --> Log preview` in Magento admin. Refer to the :ref:`troubleshooting-logs` section to get more details concerning the logging feature.
