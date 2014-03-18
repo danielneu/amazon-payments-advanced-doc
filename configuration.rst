@@ -43,9 +43,11 @@ Sandbox mode has been designed to test **Pay with Amazon** service. In sanbox mo
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In sandbox mode you can simulate certain payment states. By enabling this option you get additional fields on the Amazon Checkout page that allow selecting expected payment status given in a response.
 
+.. _configuration-payment-action:
+
 :guilabel:`Payment Action`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can select desired payment action taken after order is placed. By default authorization is made automatically and capture must be triggered by the seler by creating an invoice in Magento admin (Authorize method). By selecting `Authorize & capture` method order amount will be captured immediately, which means that authorization will be followed by immediate capture call.
+You can select desired payment action taken after order is placed. By default authorization is made automatically and capture must be triggered by the seler by creating an invoice in Magento admin (Authorize method). By selecting `Authorize & capture` method order amount will be captured immediately, which means that authorization will be followed by immediate capture call. If you want to use this setting it is mandatory that you have to be whitelisted for this feature by Amazon Payments first.
 
 .. warning:: Please use `Authorize & capture` action only in case you're shipping goods same day they are ordered.
 
@@ -72,6 +74,8 @@ Email Options
 -------------
 
 .. image:: /images/configuration_screenshot_4.png
+
+.. _configuration-order-confirmation:
 
 :guilabel:`Send order confirmation`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

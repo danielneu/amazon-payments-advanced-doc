@@ -66,3 +66,19 @@ On the `Transactional Emails` list press :guilabel:`Add New Template` button and
 Fields in `Template Information` section will be filled out with the data taken from the default email template. Please fill in missing name of your modified email template in the `Template Name` input, adjust `Template Content` and `Template Styles` to your needs and save your work by pressing `Save Template` button. The new template shall appear on the `Transactional Emails` list.
 
 Newly created email template can be used now, you can switch to it in the extension settings, see: :ref:`configuration-declined-payment-email`.
+
+
+Amazon Payments logo
+--------------------
+
+If you want to place Amazon Payments logo in your shop to let your customers know you're using payment services provided by Amazon Payments refer to the following guidelines:
+
+* logos:
+
+  - UK: https://payments.amazon.co.uk/business/material#payment-marks-graphics
+  - DE: https://payments.amazon.de/business/material#payment-marks-graphics 
+
+* button placement:
+
+  - UK: https://payments.amazon.co.uk/business/material#button-guidelines
+  - DE: https://payments.amazon.de/business/material#button-guidelines

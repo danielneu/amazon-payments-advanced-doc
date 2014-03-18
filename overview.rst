@@ -3,6 +3,7 @@ Overview
 
 This extension provides an official integration of your Magento store with **Pay with Amazon** payment service. It helps your customers shop quickly, safely and securely. Your customers can pay on your website without re-entering their payment and address details. All Amazon transactions are protected by Amazon's A-to-z Guarantee.
 
+
 Extension features
 ------------------
 
@@ -13,3 +14,19 @@ Extension features
 * Live & sandbox modes available
 * Toolbox for simulating payment states in sandbox mode
 * CSV-based event logger
+
+
+Extension vendor
+----------------
+
+This extension has been developed by creativestyle GmbH in cooperation with Amazon Payments Europe S.C.A.
+
+Creativestyle is an interactive agency with years of experience and origins in Germany. Our company is present in the e-commerce market since 2001. We focus on development and implementation of various Internet projects.
+
+| **creativestyle GmbH**
+| Ganghoferstr. 68 a
+| 80339 München
+| Germany
+| +49 89 5480 7604
+| http://www.creativestyle.de
+|
