@@ -1,13 +1,14 @@
-===========================================
- Pay with Amazon - extension for *Magento* 
-===========================================
+.. image:: /images/amazon_payments_logo.png
+   :align: right
 
+=================================================================
+Pay with Amazon (Advanced Payment APIs) - extension for *Magento* 
+=================================================================
 
 Proudly provided by:
 
 .. image:: /images/creativestyle_logo.png
-.. image:: /images/amazon_payments_logo.png
-
+   :align: center
 
 .. toctree::
    :maxdepth: 3
@@ -18,6 +19,6 @@ Proudly provided by:
    configuration
    customization
    workflow
+   testing
    faq
    troubleshooting
-

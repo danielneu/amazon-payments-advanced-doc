@@ -21,7 +21,7 @@ Amazon Advanced Payments APIs account setup
 Registering an Amazon Payments Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Go to http://payments.amazon.de (DE merchants) or http://payments.amazon.co.uk (UK merchants)
+* Go to https://payments.amazon.de/business/pre-registration-api?ld=SPEXDEAPAMagento (DE merchants) or https://payments.amazon.co.uk/business/pre-registration-api?ld=SPEXUKAPAMagento (UK merchants)
 * Click :guilabel:`Business` and choose :menuselection:`Setup options --> Advanced Payment APIs`
 
 .. image:: /images/prerequisites_screenshot_1.png

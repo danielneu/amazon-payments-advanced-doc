@@ -3,6 +3,7 @@ Overview
 
 This extension provides an official integration of your Magento store with **Pay with Amazon** payment service. It helps your customers shop quickly, safely and securely. Your customers can pay on your website without re-entering their payment and address details. All Amazon transactions are protected by Amazon's A-to-z Guarantee.
 
+The extension is a pure payment solution. No item level is communicated to Amazon Payments and it allows you to manage your orders directly from Magento.
 
 Extension features
 ------------------

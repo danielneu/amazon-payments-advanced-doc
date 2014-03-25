@@ -1,12 +1,15 @@
 Design customization
 ====================
 
+
+.. _customization-frontend-templates:
+
 Frontend templates
 ------------------
 
-If you are using a custom design theme and would like to adjust appearance of **Pay with Amazon** templates please complete following steps (all paths are relative to the Magento root folder):
+If you are using a custom design theme and would like to adjust the appearance of **Pay with Amazon** templates, please complete the following steps (all paths are relative to the Magento root folder):
 
-.. warning:: Never edit default template or skin files directly as they can be (and surely will be) overwritten when upgrading this extension to a newer version. Edit their copies only as described below.
+.. warning:: Never edit the default template or skin files directly as they can be (and surely will be) overwritten when upgrading this extension to a newer version. Edit their copies only as described below.
 
 * Create folders:
 
@@ -23,7 +26,7 @@ If you are using a custom design theme and would like to adjust appearance of **
        $ mkdir -p skin/frontend/YOURPACKAGE/YOURTHEME/creativestyle/css
        $ mkdir -p skin/frontend/YOURPACKAGE/YOURTHEME/creativestyle/images
 
-* Clone following files:
+* Clone the following files:
 
   ``app/design/frontend/base/default/layout/amazonpayments.xml``
   ``app/design/frontend/base/default/template/creativestyle/amazonpayments/*``
@@ -41,37 +44,19 @@ If you are using a custom design theme and would like to adjust appearance of **
        $ cp skin/frontend/base/default/creativestyle/images/* skin/frontend/YOURPACKAGE/YOURTHEME/creativestyle/images/*
 
 
-After cloning above files to your theme folders you can adjust design by editing appropriate files (HTML templates, CSS stylesheets and layout file). You can enable :guilabel:`Template Path Hints` to find out the names of the template files used by the extension in particular steps of the checkout process (in Magento admin, within selected store view scope: :menuselection:`System --> Configuration --> Developer --> Debug`).
+After cloning the above files to your theme folders, you can adjust the design by editing the appropriate files (HTML templates, CSS stylesheets and layout file). You can enable :guilabel:`Template Path Hints` to find out the names of the template files used by the extension in particular steps of the checkout process (in Magento admin, within selected store view scope: :menuselection:`System --> Configuration --> Developer --> Debug`).
 
 .. image:: /images/customization_screenshot_1.png
 
-.. note:: Please note that ID attribute of all HTML tags must be preserved, otherwise changes to corresponding JS scripts must be applied (do not try to change it unless you know what are you doing).
+.. note:: Please note that the ID attributes of all HTML tags must be preserved, otherwise changes to the corresponding JS scripts must be applied (do not try to change it unless you know what are you doing).
 
-Basic appearance of rendered Amazon widgets (button color and size of all widgets) can be set in **Pay with Amazon** extension settings (:menuselection:`System --> Configuration --> Amazon Payments --> Appearance Settings`), see :ref:`configuration-appearance-settings`.
-
-
-.. _customization-email-templates:
-
-Email templates
----------------
-
-Magento provides an easy-to-use mechanism for adjusting email templates' appearance and content. If you want to customize the emails that are sent by the extension go to :menuselection:`System --> Transactional Emails` in your Magento admin and follow the instruction:
-
-.. image:: /images/customization_screenshot_2.png
-
-On the `Transactional Emails` list press :guilabel:`Add New Template` button and the form will appear. In the `Load default template` section choose `Amazon authorization declined` from the `Template` dropdown, change `Locale`, if needed, which will be used for the loaded template pattern (**Pay with Amazon** extension provides 3 locales: `German`, `English UK` and `English US`, for any other selected english (US) template will be loaded) and press :guilabel:`Load Template` button.
-
-.. image:: /images/customization_screenshot_3.png
-
-Fields in `Template Information` section will be filled out with the data taken from the default email template. Please fill in missing name of your modified email template in the `Template Name` input, adjust `Template Content` and `Template Styles` to your needs and save your work by pressing `Save Template` button. The new template shall appear on the `Transactional Emails` list.
-
-Newly created email template can be used now, you can switch to it in the extension settings, see: :ref:`configuration-declined-payment-email`.
+Basic appearance of rendered Amazon widgets (button color and size of all widgets) can be set in the **Pay with Amazon** extension settings (:menuselection:`System --> Configuration --> Amazon Payments --> Appearance Settings`), see :ref:`configuration-appearance-settings`.
 
 
 Amazon Payments logo
 --------------------
 
-If you want to place Amazon Payments logo in your shop to let your customers know you're using payment services provided by Amazon Payments refer to the following guidelines:
+If you want to place the Amazon Payments logo in your shop to let your customers know you're using payment services provided by Amazon Payments refer to the following guidelines:
 
 * logos:
 
@@ -82,3 +67,23 @@ If you want to place Amazon Payments logo in your shop to let your customers kno
 
   - UK: https://payments.amazon.co.uk/business/material#button-guidelines
   - DE: https://payments.amazon.de/business/material#button-guidelines
+
+To complement the logos you should mention Amazon Payments under your listing of supported payment methods.
+
+
+.. _customization-email-templates:
+
+Email templates
+---------------
+
+Magento provides an easy-to-use mechanism for adjusting email templates' appearance and content. If you want to customize the emails that are sent by the extension, go to :menuselection:`System --> Transactional Emails` in your Magento admin and follow the instructions:
+
+.. image:: /images/customization_screenshot_2.png
+
+On the `Transactional Emails` list press :guilabel:`Add New Template` button and the form will appear. In the `Load default template` section choose `Amazon authorization declined` from the `Template` dropdown, change `Locale`, if needed, which will be used for the loaded template pattern (**Pay with Amazon** extension provides 3 locales: `German`, `English UK` and `English US`, for any other locale selected, the english (US) template will be loaded) and press :guilabel:`Load Template` button.
+
+.. image:: /images/customization_screenshot_3.png
+
+Fields in `Template Information` section will be filled out with the data taken from the default email template. Please fill in the missing name of your modified email template in the `Template Name` input, adjust `Template Content` and `Template Styles` to your needs and save your work by pressing `Save Template` button. The new template shall appear on the `Transactional Emails` list.
+
+The newly created email template can be used now, you can switch to it in the extension settings, see: :ref:`configuration-declined-payment-email`.
