@@ -5,6 +5,7 @@ This extension provides an official integration of your Magento store with **Pay
 
 The extension is a pure payment solution. No item level is communicated to Amazon Payments and it allows you to manage your orders directly from Magento.
 
+
 Extension features
 ------------------
 
@@ -15,6 +16,12 @@ Extension features
 * Live & sandbox modes available
 * Toolbox for simulating payment states in sandbox mode
 * CSV-based event logger
+
+
+Getting the extension
+---------------------
+
+The extension can be installed via `Magento Connect <http://www.magentocommerce.com/magento-connect/catalog/product/view/id/22556/s/pay-with-amazon-advanced-payment-apis-for-europe/>`_ using following key: `http://connect20.magentocommerce.com/community/Creativestyle_AmazonPayments`. Refer to the :ref:`installation` section to get more details concerning installation procedure.
 
 
 Extension vendor
