@@ -11,6 +11,7 @@ System requirements
 * cURL for PHP
 * DOM / XML for PHP
 
+.. note:: An additional fix needs to be installed for Magento 1.5. Please refer to the :ref:`FAQ <faq-magento15>` to get more details.
 
 .. _prerequisites-amazon-account-setup:
 
@@ -21,7 +22,11 @@ Amazon Advanced Payments APIs account setup
 Registering an Amazon Payments Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* Go to https://payments.amazon.de/business/pre-registration-api?ld=SPEXDEAPAMagento (DE merchants) or https://payments.amazon.co.uk/business/pre-registration-api?ld=SPEXUKAPAMagento (UK merchants)
+* Go to:
+
+  * DE merchants: `https://payments.amazon.de/business/pre-registration-api <https://payments.amazon.de/business/pre-registration-api?ld=SPEXDEAPAMagento>`_
+  * UK merchants: `https://payments.amazon.co.uk/business/pre-registration-api <https://payments.amazon.co.uk/business/pre-registration-api?ld=SPEXUKAPAMagento>`_
+
 * Click :guilabel:`Business` and choose :menuselection:`Setup options --> Advanced Payment APIs`
 
 .. image:: /images/prerequisites_screenshot_1.png

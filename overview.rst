@@ -21,7 +21,9 @@ Extension features
 Getting the extension
 ---------------------
 
-The extension can be installed via `Magento Connect <http://www.magentocommerce.com/magento-connect/catalog/product/view/id/22556/s/pay-with-amazon-advanced-payment-apis-for-europe/>`_ using following key: `http://connect20.magentocommerce.com/community/Creativestyle_AmazonPayments`. Refer to the :ref:`installation` section to get more details concerning installation procedure.
+The extension can be installed via `Magento Connect <http://www.magentocommerce.com/magento-connect/pay-with-amazon-advanced-payment-apis-for-europe.html>`_ using following key: `http://connect20.magentocommerce.com/community/Creativestyle_AmazonPayments`.
+
+Refer to the :ref:`installation` section to get more details concerning installation procedure.
 
 
 Extension vendor

@@ -59,7 +59,7 @@ This option enables or disables handling of Instant Payment Notifications, which
 
 :guilabel:`IPN endpoint URL`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This auto-generated value shall be entered in the Merchant URL field of the Integration Settings in your Amazon Seller Central in case you plan to use IPN.
+This auto-generated value shall be entered in the Merchant URL field of the Integration Settings in your Amazon Seller Central in case you plan to use IPN. If you use more than one store view in your Magento installation, the IPN endpoint URL will be shown after selecting appropriate store view scope.
 
 :guilabel:`Data polling frequency`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
