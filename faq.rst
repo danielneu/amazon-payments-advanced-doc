@@ -11,6 +11,8 @@ Installation
 
 It's a Magento bug, the ACL list is not reloaded after the new extension is installed. To solve this issue please logout from the Magento admin and next login again.
 
+----
+
 .. _faq-magento15:
 
 **It is stated that the extension is compatible with Magento 1.5, but when I try to place an order I am getting an exception: Invalid method Mage_Sales_Model_Order_Payment::lookupTransaction().**
