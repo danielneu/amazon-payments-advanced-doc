@@ -16,9 +16,13 @@ In this section you can define your Amazon Payments seller account credentials.
 
 .. image:: /images/configuration_screenshot_2.png
 
+.. _configuration-credentials:
+
 :guilabel:`Merchant ID, Access Key ID, Secret Access Key`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Fill out those fields with your Amazon Payments seller credentials. You can find them in the Amazon Seller Central, see: :ref:`prerequisites-obtaining-merchant-id` and :ref:`prerequisites-obtaining-access-and-secret-key`.
+
+.. _configuration-marketplace:
 
 :guilabel:`Marketplace`
 ~~~~~~~~~~~~~~~~~~~~~~~
