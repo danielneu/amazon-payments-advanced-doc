@@ -47,15 +47,27 @@ Lack of **Pay with Amazon** button in the cart is usually caused by one of the f
 In case you are sure you have :ref:`Merchant ID <configuration-credentials>` and :ref:`configuration-marketplace` correctly set, check if any of the following extensions are installed and enabled in your shop and follow the instructions:
 
 * Mxperts_NoRegion
+* FME_Ajaxaddtocart
 
-This extension replaces default `checkout.cart` block with own one. The replaced block doesn't include checkout buttons defined previously. To bring the **Pay with Amazon** button back, find ``noregion.xml`` file in your theme folder (or in the default theme folder) and modify `checkout.cart.methods` block by adding following code:
+Those extensions replace default `checkout.cart` block with own ones. The replaced block doesn't include checkout buttons defined previously. To bring the **Pay with Amazon** button back, find appropriate layout file:
+
+* ``noregion.xml`` for Mxperts_NoRegion extension,
+* ``ajaxaddtocart.xml`` for FME_Ajaxaddtocart extension
+
+in your theme folder (or in the default theme folder) and modify `checkout.cart.methods` and / or `checkout.cart.top_methods` blocks by adding following code:
 
     .. code-block:: xml
 
-       <block name="checkout.cart.methods" as="methods" type="core/text_list" translate="label">
-           ...
-            <block type="amazonpayments/pay_button" name="checkout.cart.methods.amazonpayments_pay.bottom" before="-">
+        <block name="checkout.cart.methods" as="methods" type="core/text_list" translate="label">
+            (...)
+            <block type="amazonpayments/advanced_button" name="checkout.cart.methods.amazonpayments_advanced.bottom" template="creativestyle/amazonpayments/advanced/button.phtml">
                 <action method="setIdSuffix"><value>div</value></action>
-                <action method="setEnableOr"><value>1</value></action>
             </block>
-       </block>
+        </block>
+        (...)
+        <block name="checkout.cart.top_methods" as="top_methods" type="core/text_list" translate="label">
+            (...)
+            <block type="amazonpayments/advanced_button" name="checkout.cart.methods.amazonpayments_advanced.top" template="creativestyle/amazonpayments/advanced/button.phtml" before="checkout.cart.methods.onepage">
+                <action method="setIdSuffix"><value>top</value></action>
+            </block>
+        </block>
