@@ -3,7 +3,7 @@
 Configuration
 =============
 
-After the successful installation you can proceed to the configuration. In the Magento admin go to :menuselection:`System --> Configuration --> Amazon Payments` tab. 
+After the successful installation you can proceed to the configuration. In the Magento admin go to :menuselection:`System --> Configuration --> Amazon Payments` tab.
 
 .. image:: /images/configuration_screenshot_1.png
 
@@ -28,6 +28,14 @@ Fill out those fields with your Amazon Payments seller credentials. You can find
 ~~~~~~~~~~~~~~~~~~~~~~~
 Select the country where you registered your seller account from the provided drop-down list. If you're unsure about this information consult your Amazon Integration Assistant.
 
+.. _configuration-validate-account:
+
+:guilabel:`Validate Amazon Payments account`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This button is designed to validate your Amazon Payments account credentials. Please use it to check whether your credentials (Merchant ID, Access Key ID, Secret Access Key and Marketplace) are valid or not.
+
+----
+
 General Settings
 ----------------
 
@@ -35,17 +43,19 @@ In this section you can enable or disable the **Pay with Amazon** service and de
 
 .. image:: /images/configuration_screenshot_3.png
 
+.. _configuration-enable-pay:
+
 :guilabel:`Enable Pay with Amazon`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 By switching this option you can enable or disable **Pay with Amazon**. This option must be set to "Yes" if you want to provide the Pay with Amazon service to your customers.
 
 :guilabel:`Sandbox mode`
 ~~~~~~~~~~~~~~~~~~~~~~~~
-Sandbox mode has been designed to test the **Pay with Amazon** service. In sandbox mode the selected payment method is not charged. Refer to the **Pay with Amazon** documentation to get more information about the sandbox environment. In general, sandbox mode should be enabled for development and staging environments for testing and has to be always disabled for production environments. Never show the sandbox buttons and widgets to buyers in your live environment.
+Sandbox mode has been designed to test the **Pay with Amazon** service. In sandbox mode the selected payment method is not charged. Refer to the **Pay with Amazon** documentation to get more information about the sandbox environment. In general, sandbox mode should be enabled for development and staging environments for testing and always has to be disabled for production environments. Never show the sandbox buttons and widgets to buyers in your live environment.
 
 :guilabel:`Show Sandbox Toolbox`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In sandbox mode you can simulate certain states for the differnt objects in the payment process. By enabling this option you get additional fields on the Amazon Checkout page that allow selecting expected payment statuses for orders, authorizations, captures and refunds returned in responses. This feature allows you to simulate different scenarios including declines in the sandbox environment.
+In sandbox mode you can simulate certain states for the different objects in the payment process. By enabling this option you get additional fields on the Amazon Checkout page that allow selecting expected payment statuses for orders, authorizations, captures and refunds returned in responses. This feature allows you to simulate different scenarios including declines in the sandbox environment.
 
 .. _configuration-payment-action:
 
@@ -73,6 +83,26 @@ If you don’t have a valid SSL certificate in your shop or due to any other rea
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 With this option you can change the status to which an order will be set after a successful authorization. In most cases leaving the default value seems to be a good idea.
 
+----
+
+Login with Amazon
+-----------------
+
+In this section you can configure **Login with Amazon** service.
+
+.. image:: /images/configuration_screenshot_7.png
+
+.. _configuration-enable-login:
+
+:guilabel:`Enable Login with Amazon`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By switching this option you can enable or disable **Login with Amazon** feature. This service must be enabled if you want to create customer accounts in your Magento shop when order is placed and to make sure that any of the orders paid with **Pay with Amazon** will be never a guest order.
+
+:guilabel:`Client ID`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Client ID identifies your website for **Login with Amazon** service. Please refer to the :ref:`Obtaining Client ID <prerequisites-obtaining-client_id>` section to find out how to get the value of your Client ID.
+
+----
 
 Email Options
 -------------
@@ -95,16 +125,40 @@ In this option you can select an email template which will be used for notifying
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 With this option you can define the sender of the `Authorization declined` email notification. The sender can be selected from the pre-defined Magento email contacts (:menuselection:`System --> Configuration --> Store Email Addresses`).
 
+----
 
-.. _configuration-appearance-settings:
+.. _configuration-common-appearance-settings:
 
-Appearance Settings
--------------------
+Common Appearance Settings
+--------------------------
 
-In this section you can set the basic design options for the Amazon widgets.
+In this section you can set size (width and height) of the Amazon widgets used in the checkout process.
 
 .. image:: /images/configuration_screenshot_5.png
 
+----
+
+.. _configuration-login-appearance-settings:
+
+Appearance Settings for Login and Pay with Amazon
+-------------------------------------------------
+
+These settings apply to the design (type, size and color) of the buttons, both :guilabel:`Pay with Amazon` and :guilabel:`Login with Amazon`, when :ref:`configuration-enable-login` option is set to "Yes", therefore they become irrelevant if you don't use **Login with Amazon** service, you may be interested then in :ref:`configuration-pay-appearance-settings`.
+
+.. image:: /images/configuration_screenshot_8.png
+
+----
+
+.. _configuration-pay-appearance-settings:
+
+Appearance Settings for standalone Pay with Amazon
+--------------------------------------------------
+
+These settings apply to the design (size and color) of the :guilabel:`Pay with Amazon` button when :ref:`configuration-enable-login` option is  is set to "No", therefore they become irrelevant if you use **Login with Amazon** service, :ref:`configuration-login-appearance-settings` are applied then.
+
+.. image:: /images/configuration_screenshot_9.png
+
+----
 
 Developer options
 -----------------

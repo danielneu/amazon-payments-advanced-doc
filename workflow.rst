@@ -1,7 +1,7 @@
 Order & payment workflow
 ========================
 
-The **Pay with Amazon** extension follows the standard Magento order and payment workflow, and thus processing **Pay with Amazon** payments doesn't differ significantly from other payment methods available in Magento, making it easy to handle. The most important difference, comparing to the standard Magento orders, is delayed access to the billing address, which is backfilled later in the synchronization process after the successful authorization.
+The **Login and Pay with Amazon** extension follows the standard Magento order and payment workflow, and thus processing **Pay with Amazon** payments doesn't differ significantly from other payment methods available in Magento, making it easy to handle. The most important difference, comparing to the standard Magento orders, is delayed access to the billing address, which is backfilled later in the synchronization process after the successful authorization.
 
 All Amazon payment objects (OrderReference, Authorize, Capture and Refund) are reflected in corresponding payment transactions in Magento, which are connected with appropriate document entities provided by the Magento, (invoices for captures, credit memos for refunds).
 
@@ -121,8 +121,13 @@ A new credit memo form will appear with most of the crucial data (like products 
 Cancelling an order
 -------------------
 
-.. todo:: Cancelling order
+For a variety of reasons it sometimes becomes necessary to cancel an order. To cancel an order and notify Amazon about the payment cancellation:
 
+* Please make sure the amount of the order you want to cancel hasn't been captured yet,
+* Go to :menuselection:`Sales --> Orders` and select the order that you would like to cancel by clicking the :guilabel:`Edit button` on its respective row,
+* Click :guilabel:`Cancel` in order page to remove this order.
+
+.. image:: /images/workflow_screenshot_9.png
 
 .. _workflow-synchronizing-order-data:
 

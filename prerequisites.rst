@@ -5,11 +5,12 @@ Prerequisites
 System requirements
 -------------------
 
-**Pay with Amazon** Magento extension requires you to have a valid Amazon Advanced Payments APIs account (refer to the :ref:`prerequisites-amazon-account-setup` if you don't have one yet) and a webserver running a Magento store instance with following conditions met:
+**Login and Pay with Amazon** Magento extension requires you to have a valid Amazon Advanced Payments APIs account (refer to the :ref:`prerequisites-amazon-account-setup` if you don't have one yet) and a webserver running a Magento store instance with following conditions met:
 
 * Magento 1.5, 1.6, 1.7, 1.8
 * cURL for PHP
 * DOM / XML for PHP
+* valid SSL certificate (for **Login with Amazon** and / or IPN handling)
 
 .. note:: An additional fix needs to be installed for Magento 1.5. Please refer to the :ref:`FAQ <faq-magento15>` to get more details.
 
@@ -63,9 +64,9 @@ Registering an Amazon Payments Account
 Entering identity data in Seller Central
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get the verification process started, please log in to Seller Central: https://sellercentral-europe.amazon.com/gp/homepage.html 
+To get the verification process started, please log in to Seller Central: https://sellercentral-europe.amazon.com/gp/homepage.html
 
-For a combined account (Advanced Payments APIs added to an existing account), please make sure that you have selected the :guilabel:`Amazon Payments – Production View` in the drop down menu on the top. 
+For a combined account (Advanced Payments APIs added to an existing account), please make sure that you have selected the :guilabel:`Amazon Payments – Production View` in the drop down menu on the top.
 
 .. image:: /images/prerequisites_screenshot_6.png
 
@@ -105,6 +106,43 @@ The AWS Access Key and the Secret Key among with the Merchant ID, will be presen
 .. image:: /images/prerequisites_screenshot_13.png
 
 
+Registering application for Login with Amazon service
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Login and Pay with Amazon work together to provide a great buyer experience. To use **Login with Amazon** you have to register the application (Magento extension) that will be allowed to access buyers accounts through your Amazon Payments seller account. **Login with Amazon** configuration settings can be accessed through :guilabel:`Login with Amazon` Seller Central page.
+
+In the App Console register a new application by clicking the :guilabel:`Register new Application` button. The :guilabel:`Register Your Application` form will appear.
+
+In the application details page, add basic details about your web site. These details will be used on your website and mobile apps (if applicable).
+
+* :guilabel:`Name Shown to Users`. This is the name displayed on the consent screen when the users agree to share the information with your web site. This name applies to Android, iOS, and website versions of your application.
+* :guilabel:`Description`. A description of your web site for Login with Amazon users.
+* :guilabel:`Privacy Notice URL`. The Privacy URL is the location of your company privacy policy. It is also displayed on the consent screen. This link is displayed to users when they first login to your application (for example: `http://www.example.com/privacy.html`).
+* :guilabel:`Logo Image File`. This logo will represent your business or website on Amazon. The logo will be displayed as a 150x150 pixel image; if you upload a file of a different size, it will be scaled to fit.
+
+When you are finished, click :guilabel:`Save` to save your changes.
+
+
+Add a Website to your Application
+'''''''''''''''''''''''''''''''''
+
+* From the Application screen, click :guilabel:`Web Settings`. You will automatically be assigned values for Client ID, which identifies your website.
+
+.. image:: /images/prerequisites_screenshot_16.png
+
+* To add Allowed JavaScript Origins to your application, click :guilabel:`Edit`.
+
+An origin is the combination of protocol, your Magento shop domain name and port (for example: `https://www.example.com:8443`). Allowed origins must use the HTTPS protocol. If you are using a default port (443) you need only include the domain name of your shop (for example: `https://www.example.com`).
+
+Adding your domain here allows the SDK for JavaScript to communicate with your Magento shop directly during the login process. Web browsers normally block cross-origin communication between scripts unless the script specifically allows it.
+
+.. image:: /images/prerequisites_screenshot_17.png
+
+To add more than one origin (in case you are running domain based multi-store Magento installation and all stores are using the same Amazon Payments seller account), click :guilabel:`Add Another`.
+
+.. note:: To use Login with Amazon with your Magento shop, you **MUST** specify an allowed JavaScript origin.
+
+
 Where to find the required credentials to configure the Magento extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -126,7 +164,7 @@ You can find this information in your Amazon Payments seller account in Seller C
 Merchant ID
 '''''''''''
 
-You can find the Merchant ID in Seller Central at :menuselection:`Setting --> Integration Settings`
+You can find the Merchant ID in Seller Central at :menuselection:`Settings --> Integration Settings`
 
 .. image:: /images/prerequisites_screenshot_14.png
 
@@ -141,6 +179,15 @@ You can find the AWS Access Key and the Secret Key in Seller Central at :menusel
 
 .. image:: /images/prerequisites_screenshot_15.png
 
+
+.. _prerequisites-obtaining-client_id:
+
+Client ID
+'''''''''
+
+You can find the Client ID of your application in Seller Central at :menuselection:`Login with Amazon --> App Console` by clicking :guilabel:`Web Settings` from the Application screen.
+
+.. image:: /images/prerequisites_screenshot_18.png
 
 
 Configuration required in Seller Central

@@ -7,7 +7,7 @@ Frequently Asked Questions
 Installation
 ------------
 
-**I have successfully installed Pay with Amazon extension, but when I try to go to the configuration page** :menuselection:`System --> Configuration --> Amazon Payments` **I am getting: 404 Not Found error.**
+**I have successfully installed Login and Pay with Amazon extension, but when I try to go to the configuration page** :menuselection:`System --> Configuration --> Amazon Payments` **I am getting: 404 Not Found error.**
 
 It's a Magento bug, the ACL list is not reloaded after the new extension is installed. To solve this issue please logout from the Magento admin and next login again.
 
@@ -60,14 +60,16 @@ in your theme folder (or in the default theme folder) and modify `checkout.cart.
 
         <block name="checkout.cart.methods" as="methods" type="core/text_list" translate="label">
             (...)
-            <block type="amazonpayments/advanced_button" name="checkout.cart.methods.amazonpayments_advanced.bottom" template="creativestyle/amazonpayments/advanced/button.phtml">
+            <block type="amazonpayments/pay_button" name="checkout.cart.methods.amazonpayments_pay.bottom" before="-">
                 <action method="setIdSuffix"><value>div</value></action>
+                <action method="setEnableOr"><value>1</value></action>
             </block>
         </block>
         (...)
         <block name="checkout.cart.top_methods" as="top_methods" type="core/text_list" translate="label">
             (...)
-            <block type="amazonpayments/advanced_button" name="checkout.cart.methods.amazonpayments_advanced.top" template="creativestyle/amazonpayments/advanced/button.phtml" before="checkout.cart.methods.onepage">
+            <block type="amazonpayments/pay_button" name="checkout.cart.methods.amazonpayments_pay.top" before="-">
                 <action method="setIdSuffix"><value>top</value></action>
+                <action method="setEnableOr"><value>1</value></action>
             </block>
         </block>

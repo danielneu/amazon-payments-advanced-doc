@@ -7,7 +7,7 @@ Design customization
 Frontend templates
 ------------------
 
-If you are using a custom design theme and would like to adjust the appearance of **Pay with Amazon** templates, please complete the following steps (all paths are relative to the Magento root folder):
+If you are using a custom design theme and would like to adjust the appearance of **Login and Pay with Amazon** templates, please complete the following steps (all paths are relative to the Magento root folder):
 
 .. warning:: Never edit the default template or skin files directly as they can be (and surely will be) overwritten when upgrading this extension to a newer version. Edit their copies only as described below.
 
@@ -50,7 +50,7 @@ After cloning the above files to your theme folders, you can adjust the design b
 
 .. note:: Please note that the ID attributes of all HTML tags must be preserved, otherwise changes to the corresponding JS scripts must be applied (do not try to change it unless you know what are you doing).
 
-Basic appearance of rendered Amazon widgets (button color and size of all widgets) can be set in the **Pay with Amazon** extension settings (:menuselection:`System --> Configuration --> Amazon Payments --> Appearance Settings`), see :ref:`configuration-appearance-settings`.
+Basic appearance of rendered Amazon widgets (button color and size of all widgets) can be set in the **Pay with Amazon** extension settings (:menuselection:`System --> Configuration --> Amazon Payments`), see :ref:`configuration-common-appearance-settings`, :ref:`configuration-login-appearance-settings` and :ref:`configuration-pay-appearance-settings` for more details.
 
 
 Amazon Payments logo

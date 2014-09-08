@@ -1,7 +1,7 @@
 Overview
 ========
 
-This extension provides an official integration of your Magento store with **Pay with Amazon** payment service. It helps your customers shop quickly, safely and securely. Your customers can pay on your website without re-entering their payment and address details. All Amazon transactions are protected by Amazon's A-to-z Guarantee.
+This extension provides an official integration of your Magento store with **Login and Pay with Amazon** services. They help your customers shop quickly, safely and securely. Your customers can pay on your website without re-entering their payment and address details. All Amazon transactions are protected by Amazon's A-to-z Guarantee.
 
 The extension is a pure payment solution. No item level is communicated to Amazon Payments and it allows you to manage your orders directly from Magento.
 
@@ -10,7 +10,8 @@ Extension features
 ------------------
 
 * **Pay with Amazon** button in the shopping cart and in the 1st step of OnePage checkout
-* Customization of **Pay with Amazon** widgets from within Magento admin
+* **Login with Amazon** button on the customer login page
+* Customization of **Login and Pay with Amazon** widgets from within Magento admin
 * Support for payment authorizations, captures and refunds (also partial refunds)
 * Supports Amazon Instant Payment Notifications
 * Live & sandbox modes available
@@ -24,6 +25,36 @@ Getting the extension
 The extension can be installed via `Magento Connect <http://www.magentocommerce.com/magento-connect/pay-with-amazon-advanced-payment-apis-for-europe.html>`_ using following key: `http://connect20.magentocommerce.com/community/Creativestyle_AmazonPayments`.
 
 Refer to the :ref:`installation` section to get more details concerning installation procedure.
+
+
+Changelog
+---------
+
+Version 1.2.2
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Added **Login with Amazon** service
+
+Improvements
+''''''''''''
+
+* Added helper methods for generating Pay or Login with Amazon buttons
+
+Changes
+'''''''
+
+* Changed frontend template files structure
+* Changed :guilabel:`Pay with Amazon` button in the 1st step of OPC to :guilabel:`Login with Amazon`
+
+Fixes
+'''''
+
+* Clean orderReferenceId session data after successful order
+* Fixed issue with permanently disabled :guilabel:`Place order` button when there is more than one layer with `buttons-set` class used
+* Fixed using of invalid Amazon account credentials when cancelling an order in non-default store of multi-store installations
 
 
 Extension vendor
