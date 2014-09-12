@@ -7,7 +7,7 @@ System requirements
 
 **Login and Pay with Amazon** Magento extension requires you to have a valid Amazon Advanced Payments APIs account (refer to the :ref:`prerequisites-amazon-account-setup` if you don't have one yet) and a webserver running a Magento store instance with following conditions met:
 
-* Magento 1.5, 1.6, 1.7, 1.8
+* Magento CE (1.5, 1.6, 1.7, 1.8, 1.9) or EE (1.11, 1.12, 1.13, 1.14)
 * cURL for PHP
 * DOM / XML for PHP
 * valid SSL certificate (for **Login with Amazon** and / or IPN handling)
@@ -111,7 +111,11 @@ Registering application for Login with Amazon service
 
 Login and Pay with Amazon work together to provide a great buyer experience. To use **Login with Amazon** you have to register the application (Magento extension) that will be allowed to access buyers accounts through your Amazon Payments seller account. **Login with Amazon** configuration settings can be accessed through :guilabel:`Login with Amazon` Seller Central page.
 
+.. image:: /images/prerequisites_screenshot_19.png
+
 In the App Console register a new application by clicking the :guilabel:`Register new Application` button. The :guilabel:`Register Your Application` form will appear.
+
+.. image:: /images/prerequisites_screenshot_20.png
 
 In the application details page, add basic details about your web site. These details will be used on your website and mobile apps (if applicable).
 

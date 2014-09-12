@@ -1,9 +1,9 @@
 .. image:: /images/amazon_payments_logo.png
    :align: right
 
-=================================================================
-Pay with Amazon (Advanced Payment APIs) - extension for *Magento* 
-=================================================================
+===========================================================================
+Login and Pay with Amazon (Advanced Payment APIs) - extension for *Magento*
+===========================================================================
 
 Proudly provided by:
 

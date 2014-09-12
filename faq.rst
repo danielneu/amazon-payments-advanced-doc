@@ -44,7 +44,7 @@ Lack of **Pay with Amazon** button in the cart is usually caused by one of the f
 * incorrect :ref:`configuration-marketplace` set,
 * your Amazon seller account is either blocked or not activated (you can check status of your account in Amazon Seller Central).
 
-In case you are sure you have :ref:`Merchant ID <configuration-credentials>` and :ref:`configuration-marketplace` correctly set, check if any of the following extensions are installed and enabled in your shop and follow the instructions:
+You can check validity of the provided Amazon Payments credentials using :ref:`configuration-validate-account` button available in the extension settings. In case you are sure you have :ref:`Merchant ID <configuration-credentials>` and :ref:`configuration-marketplace` correctly set, check if any of the following extensions is installed and enabled in your shop and follow the instructions:
 
 * Mxperts_NoRegion
 * FME_Ajaxaddtocart

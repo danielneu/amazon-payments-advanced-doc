@@ -71,7 +71,7 @@ In case the authorization has been declined due to any other reason then problem
 Capturing the payment amount
 ----------------------------
 
-After a successful authorization, you can capture funds against the authorization. The capture, similar to the authorization, can be requested in two modes: manual and automatic. By default you should capture the order amount at the moment you ship the ordered items by creating an invoice. You are only allowed to enable automatic capture if you sell digital goods or you ship items the same day they are ordered. Moreover you have to be white-listed by Amazon Payments. Contact Amazon Payments if you want to use this option.
+After a successful authorization, you can capture funds against the authorization. The capture, similar to the authorization, can be requested in two modes: manual and automatic. **By default you should capture the order amount at the moment you ship the ordered items by creating an invoice.** You are only allowed to enable automatic capture if you sell digital goods or you ship items the same day they are ordered. Moreover you have to be white-listed by Amazon Payments. Contact Amazon Payments if you want to use this option.
 
 :ref:`configuration-payment-action` option in the extension settings allows to switch between manual and automatic capture mode. For `Manual authorization` & `Authorization` actions the capture is triggerd by creating manually an invoice for the order in the Magento admin. For `Authorize & capture` action, the capture is requested automatically as soon as authorization is confirmed by Amazon Payments.
 
