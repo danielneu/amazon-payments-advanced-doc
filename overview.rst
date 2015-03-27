@@ -30,6 +30,33 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.3.2
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented asynchronous way of loading Amazon Payments JS libraries
+
+Improvements
+''''''''''''
+
+* Added cURL error handling for Login with Amazon API calls
+
+Changes
+'''''''
+
+* Using deminified JS when sandbox mode is on for easier debugging
+* Modified :guilabel:`Pay with Amazon` button tooltip text for virtual orders
+* Refactored Amazon Payments SDK library to fix autoloader issues
+
+Fixes
+'''''
+
+* Fixed wrong shipping cost when additional fees (acting as additional items in total section) are applied
+* Fixed issue with :guilabel:`Merge JS` option enabled
+* Closing OrderReference transaction after succesful capture
+
 Version 1.2.6
 ~~~~~~~~~~~~~
 
