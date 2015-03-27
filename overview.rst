@@ -30,6 +30,27 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.3.4
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added gift messages support
+* Improved customer address handling for Germany and Austria (extracting company name from the address)
+
+Changes
+'''''''
+
+* Switched IPN endpoint URL to non-secure mode if sandbox is enabled
+
+Fixes
+'''''
+
+* Fixed missing `original_price` and `base_original_price` item's attributes after order is placed
+* Fixed state of :guilabel:`Place order` button which was enabled even the payment method is not selected
+* Fixed state of :guilabel:`Place order` button which was disabled for virtual orders
+
 Version 1.3.2
 ~~~~~~~~~~~~~
 
