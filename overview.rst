@@ -30,6 +30,20 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.2.6
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented responsive Amazon Payments widgets in the checkout
+
+Fixes
+'''''
+
+* Fixed error when accessing extension settings page on Magento lower than 1.7.0.1
+* Fixed issues with Magento compiler
+
 Version 1.2.4
 ~~~~~~~~~~~~~
 
