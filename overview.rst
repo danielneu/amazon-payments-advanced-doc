@@ -30,6 +30,14 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.2.4
+~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Fixed :guilabel:`Pay with Amazon` button appearing twice when Login with Amazon feature is enabled
+
 Version 1.2.2
 ~~~~~~~~~~~~~
 
