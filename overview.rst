@@ -29,6 +29,16 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.6.2
+~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Fixed bugs in the refactored payment method model
+* Fixed IPN processing bugs in v.1.6.0
+* Fixed 404 error when customer press `Cancel` on Amazon login form
+
 Version 1.6.0
 ~~~~~~~~~~~~~
 
