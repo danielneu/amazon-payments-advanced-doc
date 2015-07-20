@@ -2,104 +2,129 @@
 
 Configuration
 =============
+After the successful installation you can proceed to the configuration. In Magento admin go to :menuselection:`creativestyle --> Login and Pay with Amazon --> Settings` (or :menuselection:`System --> Configuration --> Amazon Payments` tab).
 
-After the successful installation you can proceed to the configuration. In the Magento admin go to :menuselection:`System --> Configuration --> Amazon Payments` tab.
+.. image:: /images/1.6.0/configuration_screenshot_1.png
 
-.. image:: /images/configuration_screenshot_1.png
+Available options are grouped in following sections:
 
-Available options are grouped within the following tabs:
+.. image:: /images/1.6.0/configuration_screenshot_10.png
 
 Amazon Payments Account
 -----------------------
-
 In this section you can define your Amazon Payments seller account credentials.
 
-.. image:: /images/configuration_screenshot_2.png
+.. image:: /images/1.6.0/configuration_screenshot_2.png
 
 .. _configuration-credentials:
 
-:guilabel:`Merchant ID, Access Key ID, Secret Access Key`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Merchant ID, Access Key ID, Secret Access Key`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Fill out those fields with your Amazon Payments seller credentials. You can find them in the Amazon Seller Central, see: :ref:`prerequisites-obtaining-merchant-id` and :ref:`prerequisites-obtaining-access-and-secret-key`.
 
 .. _configuration-marketplace:
 
-:guilabel:`Marketplace`
-~~~~~~~~~~~~~~~~~~~~~~~
+`Marketplace`
+~~~~~~~~~~~~~
 Select the country where you registered your seller account from the provided drop-down list. If you're unsure about this information consult your Amazon Integration Assistant.
 
 .. _configuration-validate-account:
 
-:guilabel:`Validate Amazon Payments account`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Validate Amazon Payments account`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 This button is designed to validate your Amazon Payments account credentials. Please use it to check whether your credentials (Merchant ID, Access Key ID, Secret Access Key and Marketplace) are valid or not.
+
+.. warning:: Please note that the above feature will validate ANY Amazon MWS account, also such one that is not registered to Amazon Payments.
 
 ----
 
 General Settings
 ----------------
-
 In this section you can enable or disable the **Pay with Amazon** service and define basic settings of the extension.
 
-.. image:: /images/configuration_screenshot_3.png
+.. image:: /images/1.6.0/configuration_screenshot_3.png
 
 .. _configuration-enable-pay:
 
-:guilabel:`Enable Pay with Amazon`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-By switching this option you can enable or disable **Pay with Amazon**. This option must be set to "Yes" if you want to provide the Pay with Amazon service to your customers.
-
-:guilabel:`Sandbox mode`
+`Enable Pay with Amazon`
 ~~~~~~~~~~~~~~~~~~~~~~~~
+By switching this option you can enable or disable **Pay with Amazon**. This option must be set to `Yes` if you want to provide the Pay with Amazon service to your customers.
+
+`Sandbox mode`
+~~~~~~~~~~~~~~
 Sandbox mode has been designed to test the **Pay with Amazon** service. In sandbox mode the selected payment method is not charged. Refer to the **Pay with Amazon** documentation to get more information about the sandbox environment. In general, sandbox mode should be enabled for development and staging environments for testing and always has to be disabled for production environments. Never show the sandbox buttons and widgets to buyers in your live environment.
 
-:guilabel:`Show Sandbox Toolbox`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Show Sandbox Toolbox`
+~~~~~~~~~~~~~~~~~~~~~~
 In sandbox mode you can simulate certain states for the different objects in the payment process. By enabling this option you get additional fields on the Amazon Checkout page that allow selecting expected payment statuses for orders, authorizations, captures and refunds returned in responses. This feature allows you to simulate different scenarios including declines in the sandbox environment.
 
 .. _configuration-payment-action:
 
-:guilabel:`Payment Action`
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can select the desired payment action taken after an order is placed. By default the authorization is made automatically at order placement and the capture must be triggered by the seller by creating an invoice in Magento admin (Authorize method).  By selecting the Authorize & capture method, the order amount will be captured immediately at order placement, which means that the authorization will be followed by an immediate capture call. If you want to use this setting, it is mandatory that you get white-listed for this feature by Amazon Payments first. Do not activate this option without contacting Amazon Payments first.
+`Payment Action`
+~~~~~~~~~~~~~~~~
+You can select the desired payment action taken after an order is placed. Available options are:
 
-.. warning:: Please use `Authorize & capture` method only in the case you are shipping goods on the same day they are ordered and you have been white-listed for this service.
+* `Manual authorization` - the order reference is created only. Authorization must be requested manually by clicking `Authorize` button on the order preview page in Magento admin.
+* `Authorize` (default) - order reference creation is followed by automatic authorization request. Capture must be requested manually by creating an invoice with `Capture online` option selected.
+* `Authorize & capture` - order reference creation is followed by automatic authorization and capture request. It is mandatory that you get white-listed for this feature by Amazon Payments first. Do not activate this option without contacting Amazon Payments first.
+* `ERP mode` - same as `Manual authorization`, but further payment processing (authorization, capture, IPN notifications handling) is blocked in Magento. In this mode, it is assumed that after order reference creation rest of the payment processing steps will be handled by merchant's external ERP system.
 
-:guilabel:`Enable Instant Payment Notifications`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-This option enables or disables handling of Instant Payment Notifications, which are used by Amazon Payments for sending feedback concerning the status of payment objects. Keep in mind that using IPN requires having a valid SSL (issued by a trusted CA) installed on your server and correctly configured Secure Base URL (:menuselection:`System --> Configuration --> Web`). In case you disable IPN and want to use data polling instead you need to setup a cron for your shop.
+.. warning:: Please use `Authorize & capture` method only in case you are shipping goods on the same day they are ordered and you have been white-listed for this service.
+
+.. warning:: Please do not use `ERP mode` unless your ERP system supports Amazon Payments transactions processing.
+
+.. _configuration-authorization-processing-mode:
+
+`Authorization Processing Mode`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This option defines mode of calling authorization request. By default `Asynchronous` mode is set, meaning that the Amazon Payments API responses immediately, but the authorization status is not known exactly and thus returned as *Pending*. This behavior requires authorization status update (either via IPN notification or cron-triggered data polling) before dispatching the order. `Synchronous` authorization returns its status immediately, but such a process takes usually few seconds more than `Asynchronous` authorization, causing your customer needs to wait longer until success page appears after `Place order` button click.
+
+`Enable Instant Payment Notifications`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This option enables or disables handling of Instant Payment Notifications, which are used by Amazon Payments for sending feedback concerning the status of payment objects. Keep in mind that using IPN requires valid SSL certificate (issued by a trusted CA) installed on your server and correctly configured `Secure Base URL` and `Use Secure URLs in Frontend` config options (:menuselection:`System --> Configuration --> Web --> Secure` section). In case you disable IPN and want to use data polling instead you need to setup a cron for your shop.
+
+.. note:: Trusted Certificate Authorities and other SSL requirements are listed on Amazon Payments webpage in `english <https://payments.amazon.co.uk/help/81779>`_ and `german <https://payments.amazon.de/help/81779>`_ language.
 
 .. _configuration-ipn-endpoint-url:
 
-:guilabel:`IPN endpoint URL`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`IPN endpoint URL`
+~~~~~~~~~~~~~~~~~~
 This auto-generated value shall be entered in the Merchant URL field of the Integration Settings in your Amazon Seller Central in case you plan to use IPN. If you use more than one store view in your Magento installation, the IPN endpoint URL will be shown after selecting appropriate store view scope.
 
-:guilabel:`Data polling frequency`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Data polling frequency`
+~~~~~~~~~~~~~~~~~~~~~~~~
 If you don’t have a valid SSL certificate in your shop or due to any other reason you don’t want to use IPN, you can set how often status of the different object shall be polled from Amazon Payments servers. Note that the cron must be setup for your shop for periodic triggering routines that poll payment data.
 
-:guilabel:`Order status on authorization`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-With this option you can change the status to which an order will be set after a successful authorization. In most cases leaving the default value seems to be a good idea.
+.. _configuration-new-order-status:
+
+`New order status`
+~~~~~~~~~~~~~~~~~~
+With this option you can choose the status for newly created orders. Statuses assigned to *New* state are allowed only. Please note that this config option becomes obsolete when you use :ref:`synchronous authorization <configuration-authorization-processing-mode>`, initial order status will be set to :ref:`Order status on authorization <configuration-order-status-on-authorization>` value then.
+
+.. _configuration-order-status-on-authorization:
+
+`Order status on authorization`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+With this option you can change the status that will be set for an order after a successful authorization. Statuses assigned to *Processing* state are allowed only. In most cases leaving the default value seems to be a good idea.
+
+.. warning:: Please note the difference between **state** and **status** terms in Magento. State is used by Magento internally to identify current stage of the order workflow, while status is some kind of a descriptive reflection of the state for seller purposes. Just as it is not possbile to define custom states in Magento, **it is not possible to configure the extension to use different order states** as well (*New* aka *Pending* is used for newly created orders, *Processing* - for successfully authorized orders). This rule implies that :ref:`New order status <configuration-new-order-status>` can be only changed to the status that is assigned to *New* state, while :ref:`Order status on authorization <configuration-order-status-on-authorization>` to the status assigned to *Processing* state. Any attempt to modify this behavior in the extension source code directly may lead to the inconsistency of the order workflow and may cause hard to debug issues. In case you need different than *New* state for the newly created order, consider using :ref:`synchronous authorization <configuration-authorization-processing-mode>` which gets authorization status immediately and uses :ref:`Order status on authorization <configuration-order-status-on-authorization>` straight away.
 
 ----
 
 Login with Amazon
 -----------------
-
 In this section you can configure **Login with Amazon** service.
 
-.. image:: /images/configuration_screenshot_7.png
+.. image:: /images/1.6.0/configuration_screenshot_7.png
 
 .. _configuration-enable-login:
 
-:guilabel:`Enable Login with Amazon`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Enable Login with Amazon`
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 By switching this option you can enable or disable **Login with Amazon** feature. This service must be enabled if you want to create customer accounts in your Magento shop when order is placed and to make sure that any of the orders paid with **Pay with Amazon** will be never a guest order.
 
-:guilabel:`Client ID`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Client ID`
+~~~~~~~~~~~
 The Client ID identifies your website for **Login with Amazon** service. Please refer to the :ref:`Obtaining Client ID <prerequisites-obtaining-client_id>` section to find out how to get the value of your Client ID.
 
 ----
@@ -107,22 +132,24 @@ The Client ID identifies your website for **Login with Amazon** service. Please 
 Email Options
 -------------
 
-.. image:: /images/configuration_screenshot_4.png
+.. image:: /images/1.6.0/configuration_screenshot_4.png
 
 .. _configuration-order-confirmation:
 
-:guilabel:`Send order confirmation`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Send order confirmation`
+~~~~~~~~~~~~~~~~~~~~~~~~~
 This option allows you to select whether a confirmation email for newly placed orders shall be sent by the shop. Note that, regardless this setting, a payment confirmation will be always sent by Amazon Payments.
+
+.. note:: Order confirmation emails are not sent unless authorization is confirmed. If the emails are not sent, even you have above option enabled, it is very likely that Amazon Payments transactions are not updated. In such a case please make sure your shop accepts IPN notifications or polls transaction data in the cronjob.
 
 .. _configuration-declined-payment-email:
 
-:guilabel:`Declined Payment Email Template`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Declined Payment Email Template`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In this option you can select an email template which will be used for notifying customers about declined authorizations. Refer to the :ref:`customization-email-templates` section to find out how to customize email templates.
 
-:guilabel:`Declined Payment Email Sender`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Declined Payment Email Sender`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 With this option you can define the sender of the `Authorization declined` email notification. The sender can be selected from the pre-defined Magento email contacts (:menuselection:`System --> Configuration --> Store Email Addresses`).
 
 ----
@@ -131,10 +158,23 @@ With this option you can define the sender of the `Authorization declined` email
 
 Common Appearance Settings
 --------------------------
+In this section you can set size (width and height) of Amazon widgets used in the checkout process.
 
-In this section you can set size (width and height) of the Amazon widgets used in the checkout process.
+.. image:: /images/1.6.0/configuration_screenshot_5.png
 
-.. image:: /images/configuration_screenshot_5.png
+.. _configuration-use-responsive-widgets:
+
+`Use responsive widgets`
+~~~~~~~~~~~~~~~~~~~~~~~~
+With this option you can decide if Amazon widgets used in the checkout (address book, wallet) will adapt to the layout by filling whole container area. This behavior allows to set widget size by defining size of its container in the external CSS file, making Amazon checkout compatible and easy to use with responsive layouts. Disabling this option will change the widgets to use explicit sizes defined in the next config options of this section.
+
+`Address widget width, Address widget height`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this option you can set size in pixels (width and height) of Amazon address book widget for disabled :ref:`configuration-use-responsive-widgets` option.
+
+`Wallet widget width, Wallet widget height`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In this option you can set size in pixels (width and height) of Amazon wallet widget for disabled :ref:`configuration-use-responsive-widgets` option.
 
 ----
 
@@ -142,10 +182,9 @@ In this section you can set size (width and height) of the Amazon widgets used i
 
 Appearance Settings for Login and Pay with Amazon
 -------------------------------------------------
+These settings apply to the design (type, size and color) of the buttons, both `Pay with Amazon` and `Login with Amazon`, when :ref:`configuration-enable-login` option is set to `Yes`, therefore they become irrelevant if you don't use **Login with Amazon** service, you may be interested then in :ref:`configuration-pay-appearance-settings`.
 
-These settings apply to the design (type, size and color) of the buttons, both :guilabel:`Pay with Amazon` and :guilabel:`Login with Amazon`, when :ref:`configuration-enable-login` option is set to "Yes", therefore they become irrelevant if you don't use **Login with Amazon** service, you may be interested then in :ref:`configuration-pay-appearance-settings`.
-
-.. image:: /images/configuration_screenshot_8.png
+.. image:: /images/1.6.0/configuration_screenshot_8.png
 
 ----
 
@@ -153,24 +192,23 @@ These settings apply to the design (type, size and color) of the buttons, both :
 
 Appearance Settings for standalone Pay with Amazon
 --------------------------------------------------
+These settings apply to the design (size and color) of the `Pay with Amazon` button when :ref:`configuration-enable-login` option is set to `No`, therefore they become irrelevant if you use **Login with Amazon** service, :ref:`configuration-login-appearance-settings` are applied then.
 
-These settings apply to the design (size and color) of the :guilabel:`Pay with Amazon` button when :ref:`configuration-enable-login` option is  is set to "No", therefore they become irrelevant if you use **Login with Amazon** service, :ref:`configuration-login-appearance-settings` are applied then.
-
-.. image:: /images/configuration_screenshot_9.png
+.. image:: /images/1.6.0/configuration_screenshot_9.png
 
 ----
 
 Developer options
 -----------------
 
-.. image:: /images/configuration_screenshot_6.png
+.. image:: /images/1.6.0/configuration_screenshot_6.png
 
-:guilabel:`Allowed IPs (comma separated)`
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Allowed IPs (comma separated)`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 For testing or debugging purposes you can restrict access to **Pay with Amazon** checkout in your shop to certain IP numbers only. **Pay with Amazon** button will be shown only for the visitors coming from allowed IPs. You can set more than one allowed IP separated with commas.
 
 .. _configuration-logs:
 
-:guilabel:`Enable logging`
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Pay with Amazon extension comes with a dedicated logging mechanism. Any exception, API call or IPN notification will be saved to the var/log/amazonpayments folder in your Magento installation. For your convenience logs are also accessible via :menuselection:`creativestyle --> Amazon Payments --> Log preview` in Magento admin. Refer to the :ref:`troubleshooting-logs` section to get more details concerning the logging feature.
+`Enable logging`
+~~~~~~~~~~~~~~~~
+The Pay with Amazon extension comes with a dedicated logging mechanism. Any exception, API call or IPN notification will be saved to the var/log/amazonpayments folder in your Magento installation. For your convenience logs are also accessible via :menuselection:`creativestyle --> Login and Pay with Amazon --> Log preview` in Magento admin. Refer to the :ref:`troubleshooting-logs` section to get more details concerning the logging feature.

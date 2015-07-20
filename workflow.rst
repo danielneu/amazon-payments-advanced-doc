@@ -15,29 +15,33 @@ The **Pay with Amazon** button appears in several places in the shop:
 * in the 1st step of the default One Page Checkout,
 * in the sidebar cart widget.
 
+.. image:: /images/1.6.0/order_step_1.png
+
 You can also place the **Pay with Amazon** button in any place you like by including following statement in the template file:
 
 .. code-block:: php
 
    <?php echo Mage::helper('amazonpayments')->getPayWithAmazonButton(); ?>
 
-Pressing the **Pay with Amazon** button launches the Amazon Payments authentication window, where the customer is asked for his Amazon account e-mail address and password. After a successful login the customer is redirected to the Amazon checkout page in your shop.
+Pressing the **Pay with Amazon** button launches the Amazon Payments authentication window, where the customer is asked for his Amazon account e-mail address and password.
 
-.. image:: /images/workflow_screenshot_1.png
+.. image:: /images/1.6.0/order_step_2.png
 
+After a successful login the customer is redirected to the Amazon checkout page in your shop.
 
 Placing an order
 ----------------
-
 The **Pay with Amazon** checkout form consists of 4 steps arranged within a single page (unlike Magento default checkout, which uses accordion for showing and hiding particular steps of the checkout). These steps are: shipping address (handled by Amazon's address book widget), payment method (handled by Amazon's wallet widget), shipping method and order review (handled by default Magento checkout templates). All fields in the form (shipping address, payment method and shipping method) are pre-filled, which means that in very basic scenario customer can finish the checkout with just one click. Unfortunately, pre-filling doesn't apply to the terms and conditions checkbox (if used at all) and can raise the number of required clicks, which, however, doesn't affect the easiness and user-friendliness of the **Pay with Amazon** payment method.
 
-.. note:: The value selected in each checkout step is saved in a separate AJAX call. When the checkout form shows up for the first time, depending on the internet connection speed  and the web-server's response time, it may take up to few seconds until :guilabel:`Place order` button will be active and can be clicked by the customer.
+.. image:: /images/1.6.0/order_step_3.png
 
-After selecting the desired shipping address, payment method, shipping method and pressing :guilabel:`Place order` button (preceded by accepting terms and conditions if needed), the customer is redirected to the success page. **Pay with Amazon** uses the default Magento success page, which means there's no need to add any tracking scripts or additional page layout elements that you use in default Magento checkout and want also use in Amazon checkout, all features implemented additionally on the Magento success page shall also appear on Amazon checkout success page.
+.. note:: The value selected in each checkout step is saved in a separate AJAX call. When the checkout form shows up for the first time, depending on the internet connection speed  and the web-server's response time, it may take up to few seconds until `Place order` button gets active and can be clicked by the customer.
 
-.. image:: /images/workflow_screenshot_2.png
+After selecting the desired shipping address, payment method, shipping method and pressing `Place order` button (preceded by accepting terms and conditions if needed), the customer is redirected to the success page. **Pay with Amazon** uses the default Magento success page, which means there's no need to add any tracking scripts or additional page layout elements that you use in default Magento checkout and want also use in Amazon checkout, all features implemented additionally on the Magento success page shall also appear on Amazon checkout success page.
 
-The created order will be transferred to Amazon and will appear in your Magento admin in **Pending** state.
+.. image:: /images/1.6.0/order_step_4.png
+
+The created order will be transferred to Amazon and will appear in your Magento admin in `Pending` (by default) or `Processing` (if you are using :ref:`synchronous authorization <configuration-authorization-processing-mode>`) state.
 
 .. note:: You may notice in the Magento admin that the billing address may be incorrect at this point (as mentioned in the introduction to this chapter). That's true if the billing differs from the shipping data. The only available payment object at the time of placing order is the OrderReference, which, unfortunately, doesn't provide billing data and thus shipping address must be used to meet Magento requirements concerning order data. The billing address will be updated as soon as authorization is confirmed by Amazon Payments. Keep also in mind that the billing address is available only for the sellers that provided a valid VAT number in Amazon Seller Central.
 
@@ -53,7 +57,7 @@ An authorization can be requested after the order data is successfully transferr
 Manual authorization
 ~~~~~~~~~~~~~~~~~~~~
 
-In case you ship ordered items after 30 days or more you have to select `Manual authorization` as a payment action. It will stop Magento from requesting an authorization automatically and let you make an authorization request manually from the Magento admin at any suitable time. To manually invoke an authorization, login to the Magento admin, open the order you want authorize payment for and click the :guilabel:`Authorize payment` button placed in the top buttons rows.
+In case you ship ordered items after 30 days or more you have to select `Manual authorization` as a payment action. It will stop Magento from requesting an authorization automatically and let you make an authorization request manually from the Magento admin at any suitable time. To manually invoke an authorization, login to the Magento admin, open the order you want authorize payment for and click the `Authorize payment` button placed in the top buttons rows.
 
 .. image:: /images/workflow_screenshot_3.png
 
@@ -79,11 +83,11 @@ After a successful authorization, you can capture funds against the authorizatio
 Manual capture
 ~~~~~~~~~~~~~~
 
-To capture the order amount, you must create an invoice first. To create an invoice, login to the Magento admin, open the order for which you want to capture the amount and click the :guilabel:`Invoice` button located in the top buttons rows. Please make sure that the order you want to process has been successfully authorized, which basically means that it is in **Processing** state.
+To capture the order amount, you must create an invoice first. To create an invoice, login to the Magento admin, open the order for which you want to capture the amount and click the `Invoice` button located in the top buttons rows. Please make sure that the order you want to process has been successfully authorized, which basically means that it is in **Processing** state.
 
 .. image:: /images/workflow_screenshot_4.png
 
-After clicking the :guilabel:`Invoice` button, a new invoice form will appear with most of the crucial data (like products quantity) already filled in. You can adjust some invoice fields if needed. At this point you can create a shipment as well, by checking :guilabel:`Create Shipment` checkbox and adding a tracking number if needed. Before submitting the form, please **make absolutely sure** that :guilabel:`Amount` selectbox is set to `Capture online` and press :guilabel:`Submit Invoice` button. A new invoice and a new shipment (if checked :guilabel:`Create Shipment` checkbox) will be created for the order and the capture request is sent to Amazon Payments.
+After clicking the `Invoice` button, a new invoice form will appear with most of the crucial data (like products quantity) already filled in. You can adjust some invoice fields if needed. At this point you can create a shipment as well, by checking `Create Shipment` checkbox and adding a tracking number if needed. Before submitting the form, please **make absolutely sure** that `Amount` selectbox is set to `Capture online` and press `Submit Invoice` button. A new invoice and a new shipment (if checked `Create Shipment` checkbox) will be created for the order and the capture request is sent to Amazon Payments.
 
 .. image:: /images/workflow_screenshot_5.png
 
@@ -103,19 +107,19 @@ In this mode the capture is requested automatically after the successful authori
 Refunding order items
 ---------------------
 
-The order, which payment has been captured for, can be refunded either fully or partially. Refunds are made against the invoices and thus having a paid invoice assigned to the order is a necessary condition that has to be met to refund any order item. Refunds in Magento are recorded as credit memos, so for requesting a refund with Amazon Payments you should create a credit memo first. To create a credit memo login to the Magento admin, open the order you want refund, click :guilabel:`Invoices` tab on the right, select an invoice you want to refund and click on it.
+The order, which payment has been captured for, can be refunded either fully or partially. Refunds are made against the invoices and thus having a paid invoice assigned to the order is a necessary condition that has to be met to refund any order item. Refunds in Magento are recorded as credit memos, so for requesting a refund with Amazon Payments you should create a credit memo first. To create a credit memo login to the Magento admin, open the order you want refund, click `Invoices` tab on the right, select an invoice you want to refund and click on it.
 
 .. image:: /images/workflow_screenshot_6.png
 
-A preview of the selected invoice will appear. Make sure that you are on the single invoice preview page and click the :guilabel:`Credit Memo` button.
+A preview of the selected invoice will appear. Make sure that you are on the single invoice preview page and click the `Credit Memo` button.
 
 .. image:: /images/workflow_screenshot_7.png
 
-A new credit memo form will appear with most of the crucial data (like products quantity to be refunded) already filled in. If you want to refund the invoice partially (i.e. only a part of the invoiced items) adjust the product quantities to be refunded (set 0 for items that shall not be refunded) and click :guilabel:`Update Qty's` button to update refund totals. You can also set the refunded items back to stock by checking :guilabel:`Return to Stock` checkbox. Next choose if you want to refund shipping costs or apply any refunds adjustment and fill in the appropriate fields. Next before submitting the credit memo form, double check that you have :guilabel:`Refund` button available and click it. A credit memo will be created and a refund will be requested with Amazon Payments. Its status will be updated either via IPN or data polling, depending on the update method selected in the extension settings.
+A new credit memo form will appear with most of the crucial data (like products quantity to be refunded) already filled in. If you want to refund the invoice partially (i.e. only a part of the invoiced items) adjust the product quantities to be refunded (set 0 for items that shall not be refunded) and click `Update Qty's` button to update refund totals. You can also set the refunded items back to stock by checking `Return to Stock` checkbox. Next choose if you want to refund shipping costs or apply any refunds adjustment and fill in the appropriate fields. Next before submitting the credit memo form, double check that you have `Refund` button available and click it. A credit memo will be created and a refund will be requested with Amazon Payments. Its status will be updated either via IPN or data polling, depending on the update method selected in the extension settings.
 
 .. image:: /images/workflow_screenshot_8.png
 
-.. warning:: For the successful refund (recorded in Magento and requested (!) with Amazon Payments) always use :guilabel:`Refund` button available on the new credit memo form invoked from the single invoice preview page. If you click :guilabel:`Credit Memo` button directly on the order page you will be redirected to the new credit memo form with :guilabel:`Refund offline` button only, which admittedly will record credit memo in Magento, but surely won't call refund request at Amazon Payments gateway. If in any case you will get a credit memo with :guilabel:`Refund offline` button only then surely something had to go wrong and you should stop the refund process immediately and start it from the beginning following the above guideline.
+.. warning:: For the successful refund (recorded in Magento and requested (!) with Amazon Payments) always use `Refund` button available on the new credit memo form invoked from the single invoice preview page. If you click `Credit Memo` button directly on the order page you will be redirected to the new credit memo form with `Refund offline` button only, which admittedly will record credit memo in Magento, but surely won't call refund request at Amazon Payments gateway. If in any case you will get a credit memo with `Refund offline` button only then surely something had to go wrong and you should stop the refund process immediately and start it from the beginning following the above guideline.
 
 
 Cancelling an order
@@ -124,8 +128,8 @@ Cancelling an order
 For a variety of reasons it sometimes becomes necessary to cancel an order. To cancel an order and notify Amazon about the payment cancellation:
 
 * Please make sure the amount of the order you want to cancel hasn't been captured yet,
-* Go to :menuselection:`Sales --> Orders` and select the order that you would like to cancel by clicking the :guilabel:`Edit button` on its respective row,
-* Click :guilabel:`Cancel` in order page to remove this order.
+* Go to :menuselection:`Sales --> Orders` and select the order that you would like to cancel by clicking the `Edit button` on its respective row,
+* Click `Cancel` in order page to remove this order.
 
 .. image:: /images/workflow_screenshot_9.png
 

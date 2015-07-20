@@ -44,7 +44,7 @@ If you are using a custom design theme and would like to adjust the appearance o
        $ cp skin/frontend/base/default/creativestyle/images/* skin/frontend/YOURPACKAGE/YOURTHEME/creativestyle/images/*
 
 
-After cloning the above files to your theme folders, you can adjust the design by editing the appropriate files (HTML templates, CSS stylesheets and layout file). You can enable :guilabel:`Template Path Hints` to find out the names of the template files used by the extension in particular steps of the checkout process (in Magento admin, within selected store view scope: :menuselection:`System --> Configuration --> Developer --> Debug`).
+After cloning the above files to your theme folders, you can adjust the design by editing the appropriate files (HTML templates, CSS stylesheets and layout file). You can enable `Template Path Hints` to find out the names of the template files used by the extension in particular steps of the checkout process (in Magento admin, within selected store view scope: :menuselection:`System --> Configuration --> Developer --> Debug`).
 
 .. image:: /images/customization_screenshot_1.png
 
@@ -60,13 +60,13 @@ If you want to place the Amazon Payments logo in your shop to let your customers
 
 * logos:
 
-  - UK: https://payments.amazon.co.uk/business/material#payment-marks-graphics
-  - DE: https://payments.amazon.de/business/material#payment-marks-graphics 
+  - UK: https://payments.amazon.co.uk/merchant/tools#marks
+  - DE: https://payments.amazon.de/merchant/tools#marks
 
 * button placement:
 
-  - UK: https://payments.amazon.co.uk/business/material#button-guidelines
-  - DE: https://payments.amazon.de/business/material#button-guidelines
+  - UK: https://payments.amazon.co.uk/merchant/tools#guidelines
+  - DE: https://payments.amazon.de/merchant/tools#guidelines
 
 To complement the logos you should mention Amazon Payments under your listing of supported payment methods.
 
@@ -80,7 +80,7 @@ Magento provides an easy-to-use mechanism for adjusting email templates' appeara
 
 .. image:: /images/customization_screenshot_2.png
 
-On the `Transactional Emails` list press :guilabel:`Add New Template` button and the form will appear. In the `Load default template` section choose `Amazon authorization declined` from the `Template` dropdown, change `Locale`, if needed, which will be used for the loaded template pattern (**Pay with Amazon** extension provides 3 locales: `German`, `English UK` and `English US`, for any other locale selected, the english (US) template will be loaded) and press :guilabel:`Load Template` button.
+On the `Transactional Emails` list press `Add New Template` button and the form will appear. In the `Load default template` section choose `Amazon authorization declined` from the `Template` dropdown, change `Locale`, if needed, which will be used for the loaded template pattern (**Pay with Amazon** extension provides 3 locales: `German`, `English UK` and `English US`, for any other locale selected, the english (US) template will be loaded) and press `Load Template` button.
 
 .. image:: /images/customization_screenshot_3.png
 

@@ -18,7 +18,6 @@ Extension features
 * Toolbox for simulating payment states in sandbox mode
 * CSV-based event logger
 
-
 Getting the extension
 ---------------------
 
@@ -29,6 +28,20 @@ Refer to the :ref:`installation` section to get more details concerning installa
 
 Changelog
 ---------
+
+Version 1.6.0
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented synchronous authorization
+
+Improvements
+''''''''''''
+
+* Made initial order status configurable
+* Refactored payment method model
 
 Version 1.3.4
 ~~~~~~~~~~~~~
@@ -48,8 +61,8 @@ Fixes
 '''''
 
 * Fixed missing `original_price` and `base_original_price` item's attributes after order is placed
-* Fixed state of :guilabel:`Place order` button which was enabled even the payment method is not selected
-* Fixed state of :guilabel:`Place order` button which was disabled for virtual orders
+* Fixed state of `Place order` button which was enabled even the payment method is not selected
+* Fixed state of `Place order` button which was disabled for virtual orders
 
 Version 1.3.2
 ~~~~~~~~~~~~~
@@ -68,14 +81,14 @@ Changes
 '''''''
 
 * Using deminified JS when sandbox mode is on for easier debugging
-* Modified :guilabel:`Pay with Amazon` button tooltip text for virtual orders
+* Modified `Pay with Amazon` button tooltip text for virtual orders
 * Refactored Amazon Payments SDK library to fix autoloader issues
 
 Fixes
 '''''
 
 * Fixed wrong shipping cost when additional fees (acting as additional items in total section) are applied
-* Fixed issue with :guilabel:`Merge JS` option enabled
+* Fixed issue with `Merge JS` option enabled
 * Closing OrderReference transaction after succesful capture
 
 Version 1.2.6
@@ -98,7 +111,7 @@ Version 1.2.4
 Fixes
 '''''
 
-* Fixed :guilabel:`Pay with Amazon` button appearing twice when Login with Amazon feature is enabled
+* Fixed `Pay with Amazon` button appearing twice when Login with Amazon feature is enabled
 
 Version 1.2.2
 ~~~~~~~~~~~~~
@@ -117,13 +130,13 @@ Changes
 '''''''
 
 * Changed frontend template files structure
-* Changed :guilabel:`Pay with Amazon` button in the 1st step of OPC to :guilabel:`Login with Amazon`
+* Changed `Pay with Amazon` button in the 1st step of OPC to `Login with Amazon`
 
 Fixes
 '''''
 
 * Clean orderReferenceId session data after successful order
-* Fixed issue with permanently disabled :guilabel:`Place order` button when there is more than one layer with `buttons-set` class used
+* Fixed issue with permanently disabled `Place order` button when there is more than one layer with `buttons-set` class used
 * Fixed using of invalid Amazon account credentials when cancelling an order in non-default store of multi-store installations
 
 
