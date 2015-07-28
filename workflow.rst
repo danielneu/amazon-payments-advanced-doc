@@ -15,7 +15,7 @@ The **Pay with Amazon** button appears in several places in the shop:
 * in the 1st step of the default One Page Checkout,
 * in the sidebar cart widget.
 
-.. image:: /images/1.6.0/order_step_1.png
+.. image:: /images/1.6.4/order_step_1.png
 
 You can also place the **Pay with Amazon** button in any place you like by including following statement in the template file:
 
@@ -25,7 +25,7 @@ You can also place the **Pay with Amazon** button in any place you like by inclu
 
 Pressing the **Pay with Amazon** button launches the Amazon Payments authentication window, where the customer is asked for his Amazon account e-mail address and password.
 
-.. image:: /images/1.6.0/order_step_2.png
+.. image:: /images/1.6.4/order_step_2.png
 
 After a successful login the customer is redirected to the Amazon checkout page in your shop.
 
@@ -33,13 +33,13 @@ Placing an order
 ----------------
 The **Pay with Amazon** checkout form consists of 4 steps arranged within a single page (unlike Magento default checkout, which uses accordion for showing and hiding particular steps of the checkout). These steps are: shipping address (handled by Amazon's address book widget), payment method (handled by Amazon's wallet widget), shipping method and order review (handled by default Magento checkout templates). All fields in the form (shipping address, payment method and shipping method) are pre-filled, which means that in very basic scenario customer can finish the checkout with just one click. Unfortunately, pre-filling doesn't apply to the terms and conditions checkbox (if used at all) and can raise the number of required clicks, which, however, doesn't affect the easiness and user-friendliness of the **Pay with Amazon** payment method.
 
-.. image:: /images/1.6.0/order_step_3.png
+.. image:: /images/1.6.4/order_step_3.png
 
 .. note:: The value selected in each checkout step is saved in a separate AJAX call. When the checkout form shows up for the first time, depending on the internet connection speed  and the web-server's response time, it may take up to few seconds until `Place order` button gets active and can be clicked by the customer.
 
 After selecting the desired shipping address, payment method, shipping method and pressing `Place order` button (preceded by accepting terms and conditions if needed), the customer is redirected to the success page. **Pay with Amazon** uses the default Magento success page, which means there's no need to add any tracking scripts or additional page layout elements that you use in default Magento checkout and want also use in Amazon checkout, all features implemented additionally on the Magento success page shall also appear on Amazon checkout success page.
 
-.. image:: /images/1.6.0/order_step_4.png
+.. image:: /images/1.6.4/order_step_4.png
 
 The created order will be transferred to Amazon and will appear in your Magento admin in `Pending` (by default) or `Processing` (if you are using :ref:`synchronous authorization <configuration-authorization-processing-mode>`) state.
 

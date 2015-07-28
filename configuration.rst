@@ -4,17 +4,17 @@ Configuration
 =============
 After the successful installation you can proceed to the configuration. In Magento admin go to :menuselection:`creativestyle --> Login and Pay with Amazon --> Settings` (or :menuselection:`System --> Configuration --> Amazon Payments` tab).
 
-.. image:: /images/1.6.0/configuration_screenshot_1.png
+.. image:: /images/1.6.4/configuration_screenshot_1.png
 
 Available options are grouped in following sections:
 
-.. image:: /images/1.6.0/configuration_screenshot_10.png
+.. image:: /images/1.6.4/configuration_screenshot_10.png
 
 Amazon Payments Account
 -----------------------
 In this section you can define your Amazon Payments seller account credentials.
 
-.. image:: /images/1.6.0/configuration_screenshot_2.png
+.. image:: /images/1.6.4/configuration_screenshot_2.png
 
 .. _configuration-credentials:
 
@@ -42,7 +42,7 @@ General Settings
 ----------------
 In this section you can enable or disable the **Pay with Amazon** service and define basic settings of the extension.
 
-.. image:: /images/1.6.0/configuration_screenshot_3.png
+.. image:: /images/1.6.4/configuration_screenshot_3.png
 
 .. _configuration-enable-pay:
 
@@ -115,7 +115,7 @@ Login with Amazon
 -----------------
 In this section you can configure **Login with Amazon** service.
 
-.. image:: /images/1.6.0/configuration_screenshot_7.png
+.. image:: /images/1.6.4/configuration_screenshot_7.png
 
 .. _configuration-enable-login:
 
@@ -127,12 +127,18 @@ By switching this option you can enable or disable **Login with Amazon** feature
 ~~~~~~~~~~~
 The Client ID identifies your website for **Login with Amazon** service. Please refer to the :ref:`Obtaining Client ID <prerequisites-obtaining-client_id>` section to find out how to get the value of your Client ID.
 
+`Authentication Experience`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Select the method the authentication will be processed. By default `Pop-up` is used, meaning that after pressing `Pay` or `Login with Amazon` button, new window with Amazon login form opens, this requires the page you are placing the buttons on to be SSL-secured though. Choosing `Redirect` experience your customers will be redirected to Amazon login form in the current window after pressing `Pay` or `Login with Amazon` button. For the `Redirect` experience it is required to set `Allowed Return URLs` in the `Login with Amazon` section in your Seller Central.
+
+.. warning:: Be aware that `Pop-up` authentication experience used by default requires the page the button is placed on to be in the SSL mode. This requirement is fulfilled by switching the cart page into SSL on the fly. This may lead to the unexpected results, especially if you are using some non-default Magento extensions (eg. AJAX-based adding to cart). It is always advised to test the extension in the staging environment prior to the production deployment.
+
 ----
 
 Email Options
 -------------
 
-.. image:: /images/1.6.0/configuration_screenshot_4.png
+.. image:: /images/1.6.4/configuration_screenshot_4.png
 
 .. _configuration-order-confirmation:
 
@@ -160,7 +166,7 @@ Common Appearance Settings
 --------------------------
 In this section you can set size (width and height) of Amazon widgets used in the checkout process.
 
-.. image:: /images/1.6.0/configuration_screenshot_5.png
+.. image:: /images/1.6.4/configuration_screenshot_5.png
 
 .. _configuration-use-responsive-widgets:
 
@@ -184,7 +190,7 @@ Appearance Settings for Login and Pay with Amazon
 -------------------------------------------------
 These settings apply to the design (type, size and color) of the buttons, both `Pay with Amazon` and `Login with Amazon`, when :ref:`configuration-enable-login` option is set to `Yes`, therefore they become irrelevant if you don't use **Login with Amazon** service, you may be interested then in :ref:`configuration-pay-appearance-settings`.
 
-.. image:: /images/1.6.0/configuration_screenshot_8.png
+.. image:: /images/1.6.4/configuration_screenshot_8.png
 
 ----
 
@@ -194,14 +200,14 @@ Appearance Settings for standalone Pay with Amazon
 --------------------------------------------------
 These settings apply to the design (size and color) of the `Pay with Amazon` button when :ref:`configuration-enable-login` option is set to `No`, therefore they become irrelevant if you use **Login with Amazon** service, :ref:`configuration-login-appearance-settings` are applied then.
 
-.. image:: /images/1.6.0/configuration_screenshot_9.png
+.. image:: /images/1.6.4/configuration_screenshot_9.png
 
 ----
 
 Developer options
 -----------------
 
-.. image:: /images/1.6.0/configuration_screenshot_6.png
+.. image:: /images/1.6.4/configuration_screenshot_6.png
 
 `Allowed IPs (comma separated)`
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

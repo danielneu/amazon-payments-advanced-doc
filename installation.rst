@@ -3,9 +3,6 @@
 Installation
 ============
 
-.. warning:: Be aware that after installing **Login and Pay with Amazon** extension your cart page will be automatically switched into SSL mode. It is always advised to test the extension in some staging environment prior to deploy to the production, especially in case you expect any issues caused by enabling SSL on the cart page.
-
-
 Pre-installation steps
 ----------------------
 

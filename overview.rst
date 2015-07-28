@@ -29,6 +29,28 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.6.4
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented redirect authentication experience
+
+Improvements
+''''''''''''
+
+* Added links to the seller credentials in Amazon Seller Central on extension settings page
+* Added Amazon Seller Central order link on order preview page in Magento admin
+* Added invoice cancellation on declined capture
+* Modified way of identifying `Place order` button in the checkout based on button ID instead of container class name
+
+Fixes
+'''''
+
+* Removed button tooltip for mobile devices
+* Fixed missing re-authorization on declined authorization in `Auth & capture` payment mode
+
 Version 1.6.2
 ~~~~~~~~~~~~~
 
