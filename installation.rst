@@ -13,9 +13,20 @@ Pre-installation steps
 Installation process
 --------------------
 
+.. image:: /images/1.7.2/installation_step_1.png
+
 * Go to :menuselection:`System --> Magento Connect --> Magento Connect Manager` and enter your admin credentials to get logged in.
-* In the `Install New Extensions` section enter **Login and Pay with Amazon** extension key obtained from `Magento Connect <http://www.magentocommerce.com/magento-connect/login-and-pay-with-amazon-advanced-payment-apis-for-europe.html>`_ and click :guilabel:`Install` button.
-* Installation will start and after successful install it will show a message. Optionally, you can click on :guilabel:`Refresh` button to see if **Login and Pay with Amazon** (identified as `Creativestyle_AmazonPayments`) is listed on list of the installed extensions.
+
+.. image:: /images/1.7.2/installation_step_2.png
+
+* In the `Install New Extensions` section enter **Login and Pay with Amazon** extension key obtained from `Magento Connect <http://www.magentocommerce.com/magento-connect/login-and-pay-with-amazon-advanced-payment-apis-for-europe.html>`_ and click `Install` button. Magento will display information about the extension you are about to install and after making sure this is the right version click `Proceed` button.
+
+.. image:: /images/1.7.2/installation_step_3.png
+
+* Installation will start and after successful install it will show a message. Optionally, you can click on `Refresh` button to see if **Login and Pay with Amazon** (identified as `Creativestyle_AmazonPayments`) is listed on list of the installed extensions.
+
+.. image:: /images/1.7.2/installation_step_4.png
+
 * Proceed to the post-installation steps.
 
 Post-installation steps

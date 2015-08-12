@@ -5,7 +5,7 @@ Prerequisites
 System requirements
 -------------------
 
-**Login and Pay with Amazon** Magento extension requires you to have a valid Amazon Advanced Payments APIs account (refer to the :ref:`prerequisites-amazon-account-setup` if you don't have one yet) and a webserver running a Magento store instance with following conditions met:
+**Login and Pay with Amazon** Magento extension requires you to have a valid **Login and Pay with Amazon** account (refer to the :ref:`prerequisites-amazon-account-setup` if you don't have one yet) and a webserver running a Magento store instance with following conditions met:
 
 * Magento CE (1.5, 1.6, 1.7, 1.8, 1.9) or EE (1.11, 1.12, 1.13, 1.14)
 * cURL for PHP
@@ -16,7 +16,7 @@ System requirements
 
 .. _prerequisites-amazon-account-setup:
 
-Amazon Advanced Payments APIs account setup
+**Login and Pay with Amazon** account setup
 -------------------------------------------
 
 
@@ -25,19 +25,18 @@ Registering an Amazon Payments Account
 
 * Go to:
 
-  * DE merchants: `https://payments.amazon.de/business/pre-registration-api <https://payments.amazon.de/business/pre-registration-api?ld=SPEXDEAPAMagento>`_
-  * UK merchants: `https://payments.amazon.co.uk/business/pre-registration-api <https://payments.amazon.co.uk/business/pre-registration-api?ld=SPEXUKAPAMagento>`_
+  * DE merchants: `https://payments.amazon.de/preregistration/lpa <https://payments.amazon.de/preregistration/lpa?ld=SPEXDEAPAMagento>`_
+  * UK merchants: `https://payments.amazon.co.uk/preregistration/lpa <https://payments.amazon.co.uk/preregistration/lpa?ld=SPEXUKAPAMagento>`_
 
-* Click :guilabel:`Business` and choose :menuselection:`Setup options --> Advanced Payment APIs`
+* Click :menuselection:`Sign Up --> I'm a merchant`
 
-.. image:: /images/prerequisites_screenshot_1.png
+.. image:: /images/1.7.2/prerequisites_screenshot_1.png
 
-* Click :guilabel:`Sign up`
-* Go through the questionnaire to find out if you qualify for using Amazon Payments, then click :guilabel:`Sign up now`
-* At the moment you cannot add your Advanced Payments APIs account to an existing Amazon merchant account. You have to register a new account specifically for the Advanced Payments APIs.
+* Go through the questionnaire to find out if you qualify for using Amazon Payments, then click `Sign up now`
+* At the moment you cannot add your **Login and Pay with Amazon** account to an existing Amazon merchant account. You have to register a new account specifically for the Advanced Payments APIs.
 * Start registering a new account:
 
-  * If you see the link :guilabel:`Would you like to create a new account using a different e-mail address? Click here`, please do so.
+  * If you see the link `Would you like to create a new account using a different e-mail address? Click here`, please do so.
   * Enter a name for your business. In case this name is already taken, please choose a different one.
   * Enter an email address and a password. You should choose a role email address that will be read directly by the people responsible for the Amazon Payments integration. You should avoid general addresses like **info@** that are only forwarded to the general administration.
   * Choose a secure password.
@@ -66,7 +65,7 @@ Entering identity data in Seller Central
 
 To get the verification process started, please log in to Seller Central: https://sellercentral-europe.amazon.com/gp/homepage.html
 
-For a combined account (Advanced Payments APIs added to an existing account), please make sure that you have selected the :guilabel:`Amazon Payments – Production View` in the drop down menu on the top.
+For a combined account (**Login and Pay with Amazon** added to an existing account), please make sure that you have selected the `Amazon Payments – Production View` in the drop down menu on the top.
 
 .. image:: /images/prerequisites_screenshot_6.png
 
@@ -106,35 +105,37 @@ The AWS Access Key and the Secret Key among with the Merchant ID, will be presen
 .. image:: /images/prerequisites_screenshot_13.png
 
 
+.. _prerequisites-registering-application-for-login-with-amazon:
+
 Registering application for Login with Amazon service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Login and Pay with Amazon work together to provide a great buyer experience. To use **Login with Amazon** you have to register the application (Magento extension) that will be allowed to access buyers accounts through your Amazon Payments seller account. **Login with Amazon** configuration settings can be accessed through :guilabel:`Login with Amazon` Seller Central page.
+Login and Pay with Amazon work together to provide a great buyer experience. To use **Login with Amazon** you have to register the application (Magento extension) that will be allowed to access buyers accounts through your Amazon Payments seller account. **Login with Amazon** configuration settings can be accessed through `Login with Amazon` Seller Central page.
 
 .. image:: /images/prerequisites_screenshot_19.png
 
-In the App Console register a new application by clicking the :guilabel:`Register new Application` button. The :guilabel:`Register Your Application` form will appear.
+In the App Console register a new application by clicking the `Register new Application` button. The `Register Your Application` form will appear.
 
 .. image:: /images/prerequisites_screenshot_20.png
 
 In the application details page, add basic details about your web site. These details will be used on your website and mobile apps (if applicable).
 
-* :guilabel:`Name Shown to Users`. This is the name displayed on the consent screen when the users agree to share the information with your web site. This name applies to Android, iOS, and website versions of your application.
-* :guilabel:`Description`. A description of your web site for Login with Amazon users.
-* :guilabel:`Privacy Notice URL`. The Privacy URL is the location of your company privacy policy. It is also displayed on the consent screen. This link is displayed to users when they first login to your application (for example: `http://www.example.com/privacy.html`).
-* :guilabel:`Logo Image File`. This logo will represent your business or website on Amazon. The logo will be displayed as a 150x150 pixel image; if you upload a file of a different size, it will be scaled to fit.
+* `Name Shown to Users`. This is the name displayed on the consent screen when the users agree to share the information with your web site. This name applies to website versions of your application.
+* `Description`. A description of your web site for Login with Amazon users.
+* `Privacy Notice URL`. The Privacy URL is the location of your company privacy policy. It is also displayed on the consent screen. This link is displayed to users when they first login to your application (for example: `http://www.example.com/privacy.html`).
+* `Logo Image File`. This logo will represent your business or website on Amazon. The logo will be displayed as a 150x150 pixel image; if you upload a file of a different size, it will be scaled to fit.
 
-When you are finished, click :guilabel:`Save` to save your changes.
+When you are finished, click `Save` to save your changes.
 
 
 Add a Website to your Application
 '''''''''''''''''''''''''''''''''
 
-* From the Application screen, click :guilabel:`Web Settings`. You will automatically be assigned values for Client ID, which identifies your website.
+* From the Application screen, click `Web Settings`. You will automatically be assigned values for Client ID, which identifies your website.
 
 .. image:: /images/prerequisites_screenshot_16.png
 
-* To add Allowed JavaScript Origins to your application, click :guilabel:`Edit`.
+* To add Allowed JavaScript Origins to your application, click `Edit`.
 
 An origin is the combination of protocol, your Magento shop domain name and port (for example: `https://www.example.com:8443`). Allowed origins must use the HTTPS protocol. If you are using a default port (443) you need only include the domain name of your shop (for example: `https://www.example.com`).
 
@@ -142,15 +143,16 @@ Adding your domain here allows the SDK for JavaScript to communicate with your M
 
 .. image:: /images/prerequisites_screenshot_17.png
 
-To add more than one origin (in case you are running domain based multi-store Magento installation and all stores are using the same Amazon Payments seller account), click :guilabel:`Add Another`.
+To add more than one origin (in case you are running domain based multi-store Magento installation and all stores are using the same Amazon Payments seller account), click `Add Another`.
 
 .. note:: To use Login with Amazon with your Magento shop, you **MUST** specify an allowed JavaScript origin.
 
+.. _prerequisites-where-to-find-the-required-credentials:
 
 Where to find the required credentials to configure the Magento extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Magento extension requires you to enter information about your Amazon Payments account. You will need to enter:
+Magento extension requires you to enter information about your Amazon Payments account. You will need to enter:
 
 * Merchant ID (aka Merchant Number, Händlernummer, Händler-ID)
 
@@ -159,42 +161,15 @@ The Magento extension requires you to enter information about your Amazon Paymen
 * AWS Access Key (aka AWS Access Key ID, AWS-Zugangsschlüssel, AWS Zugangsschlüssel-ID)
 * Secret Key (aka AWS Secret Key, geheimer Schlüssel)
 
-You can find this information in your Amazon Payments seller account in Seller Central.
+For **Login with Amazon** service you will also need:
 
+* Client ID
 
+You can find this information in your Amazon Payments seller account in `Seller Central <https://sellercentral-europe.amazon.com/hz/me/integration/details>`_.
 
-.. _prerequisites-obtaining-merchant-id:
-
-Merchant ID
-'''''''''''
-
-You can find the Merchant ID in Seller Central at :menuselection:`Settings --> Integration Settings`
-
-.. image:: /images/prerequisites_screenshot_14.png
-
-
-
-.. _prerequisites-obtaining-access-and-secret-key:
-
-AWS Access Key / Secret Key
-'''''''''''''''''''''''''''
-
-You can find the AWS Access Key and the Secret Key in Seller Central at :menuselection:`Integration --> MWS Access Key`
-
-.. image:: /images/prerequisites_screenshot_15.png
-
-
-.. _prerequisites-obtaining-client_id:
-
-Client ID
-'''''''''
-
-You can find the Client ID of your application in Seller Central at :menuselection:`Login with Amazon --> App Console` by clicking :guilabel:`Web Settings` from the Application screen.
-
-.. image:: /images/prerequisites_screenshot_18.png
-
+.. image:: /images/1.7.2/prerequisites_screenshot_19.png
 
 Configuration required in Seller Central
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're planning to use IPN for the post-payment processing you need to enter a Merchant URL (IPN endpoint URL) in Seller Central. You can do this at :menuselection:`Settings --> Integration Settings`, then click the :guilabel:`Edit` button at :guilabel:`Instant Notification Settings`. IPN endpoint URL can be obtained from Magento admin at :menuselection:`System --> Configuration --> Amazon Payments`, see: :ref:`configuration-ipn-endpoint-url`.
+If you're planning to use IPN for the post-payment processing you need to enter a Merchant URL (IPN endpoint URL) in Seller Central. You can do this at :menuselection:`Settings --> Integration Settings`, then click the `Edit` button at `Instant Notification Settings`. IPN endpoint URL can be obtained from Magento admin at :menuselection:`System --> Configuration --> Amazon Payments`, see: :ref:`configuration-ipn-endpoint-url`.

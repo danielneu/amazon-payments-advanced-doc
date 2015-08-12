@@ -9,14 +9,16 @@ The extension is a pure payment solution. No item level is communicated to Amazo
 Extension features
 ------------------
 
-* **Pay with Amazon** button in the shopping cart and in the 1st step of OnePage checkout
-* **Login with Amazon** button on the customer login page
+* `Pay with Amazon` button in the shopping cart and in the 1st step of OnePage checkout
+* `Login with Amazon` button on the customer login and registration page
 * Customization of **Login and Pay with Amazon** widgets from within Magento admin
 * Support for payment authorizations, captures and refunds (also partial refunds)
+* Support for synchronous and asynchronous authorization
 * Supports Amazon Instant Payment Notifications
 * Live & sandbox modes available
 * Toolbox for simulating payment states in sandbox mode
 * CSV-based event logger
+* Multilanguage, available languages: en, de, fr, es, it
 
 Getting the extension
 ---------------------
@@ -28,6 +30,34 @@ Refer to the :ref:`installation` section to get more details concerning installa
 
 Changelog
 ---------
+
+Version 1.7.2
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented multilanguage feature for Login with Amazon
+
+Improvements
+''''''''''''
+
+* Implemented re-authorization after the first authorization expires
+* Putting order on hold for some kinds of closed authorization
+* Added reason code of the transaction status directly to the order comments
+* Added store name to SetOrderReferenceDetails call
+
+Changes
+'''''''
+
+* Updated Amazon Payments SDK library to 1.0.14
+
+
+Fixes
+'''''
+
+* Fixed Firefox redirect experience issue
+* Fixed issues in the splitting full customer name helper function
 
 Version 1.6.4
 ~~~~~~~~~~~~~
