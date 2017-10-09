@@ -23,7 +23,7 @@ Extension features
 Getting the extension
 ---------------------
 
-The extension can be installed via `Magento Connect <http://www.magentocommerce.com/magento-connect/login-and-pay-with-amazon-advanced-payment-apis-for-europe.html>`_ using following key: `http://connect20.magentocommerce.com/community/Creativestyle_AmazonPayments`.
+In your browser, open the `Magento Marketplace <https://marketplace.magento.com/creativestyle-creativestyle-amazonpayments.html>`_ page, add it to your cart, and go to checkout (this will be free of charge). On the order confirmation page click on `Install` to receive the access key (you may need to log in with your Magento account). Copy the access key.
 
 Refer to the :ref:`installation` section to get more details concerning installation procedure.
 
