@@ -31,6 +31,28 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.8.4
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Support for France, Italy and Spain
+* Support for PHP 7
+* Configurable store name in API calls
+
+Changes
+'''''''
+
+* `Amazon Payments` re-branding
+
+Fixes
+'''''
+
+* Fixed legacy payment method bug when trying to list all payment methods
+* Fixed missing `original_price` and `base_original_price` item's attributes after order is placed
+* Added missing return statement to the IPN controller
+
 Version 1.8.2
 ~~~~~~~~~~~~~
 
