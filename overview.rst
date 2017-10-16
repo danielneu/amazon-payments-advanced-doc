@@ -31,6 +31,14 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.7.4.1
+~~~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Fixed incorrect billing address issue for `Auth & capture` payment action
+
 Version 1.7.4
 ~~~~~~~~~~~~~
 
