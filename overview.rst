@@ -31,6 +31,25 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.8.2
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented Quick Configuration (Simple Path)
+
+Improvements
+''''''''''''
+
+* Added verbosity to error messages on frontend in sandbox mode
+* Set payment method as soon as Amazon checkout is started
+
+Fixes
+'''''
+
+* Fixed call to member function on null $quote variable in payment method model
+
 Version 1.7.8
 ~~~~~~~~~~~~~
 
