@@ -31,6 +31,26 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.8.6
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added coupon code handling in Amazon checkout review
+* Added possibility to disconnect customer account from Amazon account
+
+Changes
+'''''''
+
+* Removed password form for account matching when customer is logged-in
+* Updated Amazon Pay logos in Magento admin
+
+Fixes
+'''''
+
+* Fixed PHP versions in Magento Connect package.xml file
+
 Version 1.8.4
 ~~~~~~~~~~~~~
 
