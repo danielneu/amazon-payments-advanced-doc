@@ -178,7 +178,7 @@ html_last_updated_fmt = '%b %d, %Y'
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'amazon-pay-eu-uk-doc'
+htmlhelp_basename = 'amazon-pay-eu-uk-magento-extension'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -197,7 +197,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'amazon-pay-eu-uk-doc.tex', u'Amazon Pay (EU and UK) - extension for Magento 1.x',
+  ('index', 'amazon-pay-eu-uk-magento-extension.tex', u'Amazon Pay (EU and UK) - extension for Magento 1.x',
    u'Marek Zabrowarny', 'manual'),
 ]
 
@@ -242,7 +242,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'amazon-pay-eu-uk-magento-extension', u'Amazon Pay (EU and UK) - extension for Magento 1.x',
-   u'Marek Zabrowarny', 'PaywithAmazonMagentoextension', 'One line description of project.',
+   u'Marek Zabrowarny', 'AmazonPayMagentoExtension', 'One line description of project.',
    'Miscellaneous'),
 ]
 
