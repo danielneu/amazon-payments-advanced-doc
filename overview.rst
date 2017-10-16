@@ -31,6 +31,22 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.7.4
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added missing payment cancellation functions
+* Added Login with Amazon button on the customer registration page
+* Added retrieving shipping address during the checkout
+* Disabled Amazon button for virtual orders when Login is disabled
+
+Fixes
+'''''
+* Fixed issue with placing virtual orders in sandbox mode
+* Fixed closing order reference on completed capture
+
 Version 1.7.2
 ~~~~~~~~~~~~~
 
