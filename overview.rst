@@ -31,6 +31,26 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.7.6
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added support for custom SSL CA bundle file
+* Implemented automatic authentication experience
+* Disable `Pay with Amazon` availability for zero-total orders
+* Retrieving billing address during the checkout
+* Added exception handling for missing amazon_user_id attribute
+
+Fixes
+'''''
+
+* Added support for SUPEE-6285 patch
+* Added support for SUPEE-6788 patch
+* Fixed calls to deprecated iconv functions in SDK library
+* Fixed display errors for Magento RWD theme
+
 Version 1.7.4.1
 ~~~~~~~~~~~~~~~
 
