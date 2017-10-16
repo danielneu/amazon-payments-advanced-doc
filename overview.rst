@@ -31,6 +31,25 @@ Refer to the :ref:`installation` section to get more details concerning installa
 Changelog
 ---------
 
+Version 1.7.8
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Implemented simplified partial capture
+
+Changes
+'''''''
+
+* Updated Amazon Payments SDK library
+
+Fixes
+'''''
+
+* Added missing declined payment email templates for FR, IT and ES
+* Fixed several issues for hard declined authorizations in synchronous mode
+
 Version 1.7.6
 ~~~~~~~~~~~~~
 
