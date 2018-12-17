@@ -6,6 +6,14 @@ This extension provides an official integration of your Magento store with **Log
 The extension is a pure payment solution. No item level is communicated to Amazon Payments and it allows you to manage your orders directly from Magento.
 
 
+Getting the extension
+---------------------
+
+In your browser, open the `Magento Marketplace <https://marketplace.magento.com/creativestyle-creativestyle-amazonpayments.html>`_ page, add it to your cart, and go to checkout (this will be free of charge). On the order confirmation page click on `Install` to receive the access key (you may need to log in with your Magento account). Copy the access key.
+
+Refer to the :ref:`installation` section to get more details concerning installation procedure.
+
+
 Extension features
 ------------------
 
@@ -20,16 +28,187 @@ Extension features
 * CSV-based event logger
 * Multilanguage, available languages: en, de, fr, es, it
 
-Getting the extension
----------------------
-
-In your browser, open the `Magento Marketplace <https://marketplace.magento.com/creativestyle-creativestyle-amazonpayments.html>`_ page, add it to your cart, and go to checkout (this will be free of charge). On the order confirmation page click on `Install` to receive the access key (you may need to log in with your Magento account). Copy the access key.
-
-Refer to the :ref:`installation` section to get more details concerning installation procedure.
-
-
 Changelog
 ---------
+
+Version 2.0.24
+~~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Fixed shipping address processing during the checkout
+
+Version 2.0.22
+~~~~~~~~~~~~~~
+
+Changes
+'''''''
+
+* Revert APA deprecation (Make Client ID config option optional)
+
+Version 2.0.20
+~~~~~~~~~~~~~~
+
+Changes
+'''''''
+
+* Make Client ID config option mandatory (APA deprecation)
+
+Fixes
+'''''
+
+* Fixed non-working Amazon Pay button on the product page when Login is disabled
+
+Version 2.0.18
+~~~~~~~~~~~~~~
+
+Changes
+'''''''
+
+* Splitted Eurozone region
+
+Changes
+'''''''
+
+* Wrap execution of external JS on checkout page in try-catch block
+
+Fixes
+'''''
+
+* Fixed automatic invoice creation for auth & capture payment action
+* Fixed typos in config options paths
+
+Version 2.0.16.1
+~~~~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Fixed saving access key and secret key options issue
+
+Version 2.0.16
+~~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented support for One Page Checkout
+
+Improvements
+''''''''''''
+
+* Added support for SetOrderAttributes API call
+
+Changes
+'''''''
+
+* Updated Amazon Payments SDK library
+
+Version 2.0.14
+~~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Enabled support for multi currency globally
+
+Fixes
+'''''
+
+* Skip declined payment email sending for synchronous authorizations
+* Fix JS to dispose security warning in Magento malware scanner
+
+Version 2.0.12
+~~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Added missing translations for custom order statuses settings (#131)
+* Re-authorization after InvalidPaymentMethod follows payment action settings (#133)
+* Added order reference cancellation for asynchronous TransactionTimedOut authorization (#134)
+
+Version 2.0.10
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added configurable order statuses for declined authorizations (#129)
+* Implemented basic support for custom fields in the checkout
+
+Fixes
+'''''
+
+* Fixed invoice status update on successful capture notification (#128)
+
+Version 2.0.8
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added configurable multi currency
+
+Fixes
+'''''
+
+* Fixed missing `Refund online` button for invoices created automatically for CaptureNow options (#127)
+* Fixed TransactionTimedOut and AmazonRejected auth declines handling in synchronous mode
+
+Version 2.0.6
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added support for soft descriptor in authorization call (#115)
+* Added `Amazon Pay` button tooltip (#121)
+* Implemented automatic order reference closing on successful capture (#126)
+* Ignore authorization IPNs for synchronous mode (#120)
+
+Fixes
+'''''
+
+* Fixed double invoice bug for manual capture (#122)
+
+Version 2.0.4
+~~~~~~~~~~~~~
+
+Improvements
+''''''''''''
+
+* Added `Amazon Pay` button on product view page
+
+Fixes
+'''''
+
+* Fixed non-working Login for new customers
+
+Version 2.0.2
+~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Fix issues with wallet re-render for declined auth
+
+Version 2.0.0
+~~~~~~~~~~~~~
+
+Major Highlights
+''''''''''''''''
+
+* Implemented omni-chronous authorization
+
+Changes
+'''''''
+
+* Refactored order post-processing
+* Changed IPN endpoint URL
+* Changed frontend layout and templates (no backward compatibility)
+* Simplified frontend JS application
 
 Version 1.8.6
 ~~~~~~~~~~~~~
@@ -331,12 +510,11 @@ Extension vendor
 
 This extension has been developed by creativestyle GmbH in cooperation with Amazon Payments Europe S.C.A.
 
-Creativestyle is an interactive agency with years of experience and origins in Germany. Our company is present in the e-commerce market since 2001. We focus on development and implementation of various Internet projects.
+Creativestyle is an award-winning, pioneering e-commerce agency with more than 15 years of experience. Since 2001, they have been developing expertise in the field of technology and software solutions. With a 50 person team of experts consisting of certified specialists in the fields of design, development and management of innovative projects, they can guarantee a full range of services from consulting and planning, through concept and design, to technical implementation and subsequent project support.
 
 | **creativestyle GmbH**
-| Ganghoferstr. 68 a
-| 80339 München
+| Erika-Mann-Straße 53
+| 80636 München
 | Germany
-| +49 89 5480 7604
 | http://www.creativestyle.de
 |
