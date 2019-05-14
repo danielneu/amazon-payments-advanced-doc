@@ -31,6 +31,38 @@ Extension features
 Changelog
 ---------
 
+Version 2.0.28
+~~~~~~~~~~~~~~
+
+Improvements & changes
+''''''''''''''''''''''
+
+* Improved button tooltip handling on mobile devices
+* Explicitly set environment params for login JS application
+* Re-structure settings page
+
+Fixes
+'''''
+
+* Fixed reference to the closed cURL resource in Amazon Pay SDK lib
+* Add support for form key validation in One Page Checkout
+
+Version 2.0.26
+~~~~~~~~~~~~~~
+
+Changes
+'''''''
+
+* Stop keeping order reference ID and access token in the session data
+* Force transaction data re-fetch on incoming IPN notification
+* Re-implement Amazon Pay API requests logging
+
+Fixes
+'''''
+
+* Add shipping rates recollecting after saving shipping address (fixes shipping costs issue)
+
+
 Version 2.0.24
 ~~~~~~~~~~~~~~
 
@@ -130,7 +162,7 @@ Fixes
 * Added order reference cancellation for asynchronous TransactionTimedOut authorization (#134)
 
 Version 2.0.10
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 Improvements
 ''''''''''''
