@@ -40,3 +40,7 @@ Post-installation steps
 * Logout from the Magento admin and login again.
 
 Voila! The **Login and Pay with Amazon** extension shall be installed now. You can proceed to the :ref:`configuration` followed by :ref:`customization-frontend-templates` and :ref:`customization-email-templates` customization (if applicable).
+
+
+Upgrade
+-------
