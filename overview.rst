@@ -31,6 +31,14 @@ Extension features
 Changelog
 ---------
 
+Version 3.0.2
+~~~~~~~~~~~~~
+
+Improvements & changes
+''''''''''''''''''''''
+
+* Implemented Amazon Pay Strong Customer Authentication (PSD2 compliance)
+
 Version 2.0.28
 ~~~~~~~~~~~~~~
 
