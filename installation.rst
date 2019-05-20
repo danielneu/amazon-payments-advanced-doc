@@ -74,7 +74,7 @@ Plugin version 2.0.x (installed after September 2017) to 3.x
 11. Test if you can place an order with Amazon Pay. If you have any trouble please contact our support.
 
 Plugin version 1.x (installed before September 2017, including version 2.0.0) to 3.x
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. note:: In a nutshell: You have to uninstall the previous plugin version first. Then install the most recent version with a new extension key obtained from Magento Marketplace.
 
@@ -92,4 +92,6 @@ Post-upgrade steps
 
 .. attention:: The following instruction concerns the shops that rely on the order workflow (eg. 3rd party ERP implementation, etc.) and upgrades the extension from version either 1.x or 2.x to 3.x. Version 3.0.2 does not bring any changes to the templates or layout definitions. The only frontend related change has been introduced in the main JS application `js/creativestyle/amazonpayments.min.js` file.
 
-Version 3.0.2 comes with a significant change to the payment processing workflow. Prior to version 3.x the payment authorization was requested during placing the order (i.e. right after clicking :guilabel:`Save order` button in the checkout), thus in synchronous and optimized (when there wasn't transaction timed out decline) authorization mode, the order ended up with the immediate authorization result. Since the Strong Customer Authentication (derived from the PSD2 directive) was introduced in version 3.0.2, the authorization is requested after the order is actually placed. Thus, it may happen that the order payment remains unauthorized for a longer time unless the buyer finishes his Multi-Factor Authentication challenge. This change has to be considered for passing the order to the fulfillment process, to avoid fulfilling the orders that haven't been actually paid. As stated in :ref:`workflow-authorization` section, it is always advised to start fulfilling the order after the authorization is confirmed, which, in the default configuration, is reflected by the "Processing" order status.
+Version 3.0.2 comes with a significant change to the payment processing workflow. Prior to version 3.x the payment authorization was requested during placing the order (i.e. right after clicking :guilabel:`Save order` button in the checkout), thus in synchronous and optimized (when there wasn't transaction timed out decline) authorization mode, the order ended up with the immediate authorization result.
+
+Since the Strong Customer Authentication (derived from the PSD2 directive) was introduced in version 3.0.2, the authorization is requested after the order is actually placed. Thus, it may happen that the order payment remains unauthorized for a longer time unless the buyer finishes his Multi-Factor Authentication challenge. This change has to be considered for passing the order to the fulfillment process, to avoid fulfilling the orders that haven't been actually paid. As stated in :ref:`workflow-authorization` section, it is always advised to start fulfilling the order after the authorization is confirmed, which, in the default configuration, is reflected by the "Processing" order status.
