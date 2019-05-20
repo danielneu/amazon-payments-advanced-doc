@@ -1,3 +1,5 @@
+.. _workflow:
+
 Order & payment workflow
 ========================
 
@@ -45,6 +47,7 @@ The created order will be transferred to Amazon and will appear in your Magento 
 
 .. note:: You may notice in the Magento admin that the billing address may be incorrect at this point (as mentioned in the introduction to this chapter). That's true if the billing differs from the shipping data. The only available payment object at the time of placing order is the OrderReference, which, unfortunately, doesn't provide billing data and thus shipping address must be used to meet Magento requirements concerning order data. The billing address will be updated as soon as authorization is confirmed by Amazon Payments. Keep also in mind that the billing address is available only for the sellers that provided a valid VAT number in Amazon Seller Central.
 
+.. _workflow-authorization:
 
 Payment authorization
 ---------------------
