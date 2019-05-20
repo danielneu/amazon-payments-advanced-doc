@@ -57,7 +57,8 @@ Pre-upgrade steps
 Plugin version 2.0.x (installed after September 2017) to 3.x
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: In a nutshell: You can simply use Magento connect to upgrade to the most recent plugin version.
+.. note:: In a nutshell
+   You can simply use Magento connect to upgrade to the most recent plugin version.
 
 **Required steps:**
 
@@ -76,7 +77,8 @@ Plugin version 2.0.x (installed after September 2017) to 3.x
 Plugin version 1.x (installed before September 2017, including version 2.0.0) to 3.x
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: In a nutshell: You have to uninstall the previous plugin version first. Then install the most recent version with a new extension key obtained from Magento Marketplace.
+.. note:: In a nutshell
+   You have to uninstall the previous plugin version first. Then install the most recent version with a new extension key obtained from Magento Marketplace.
 
 **Required steps:**
 
@@ -90,7 +92,7 @@ Plugin version 1.x (installed before September 2017, including version 2.0.0) to
 Post-upgrade steps
 ~~~~~~~~~~~~~~~~~~
 
-.. attention:: The following instruction concerns the shops that rely on the order workflow (eg. 3rd party ERP implementation, etc.) and upgrades the extension from version either 1.x or 2.x to 3.x. Version 3.0.2 does not bring any changes to the templates or layout definitions. The only frontend related change has been introduced in the main JS application `js/creativestyle/amazonpayments.min.js` file.
+.. attention:: The following instruction concerns the shops that rely on the order workflow (eg. 3rd party ERP implementation, etc.) and upgrades the extension from version either 1.x or 2.x to 3.x. Version 3.0.2 does not bring any changes to the templates or layout definitions. The only frontend related change has been introduced in the main JS application `js/creativestyle/amazonpayments.min.js` file. Please refer to the changelog or contact the support in case of any doubts.
 
 Version 3.0.2 comes with a significant change to the payment processing workflow. Prior to version 3.x the payment authorization was requested during placing the order (i.e. right after clicking :guilabel:`Save order` button in the checkout), thus in synchronous and optimized (when there wasn't transaction timed out decline) authorization mode, the order ended up with the immediate authorization result.
 
