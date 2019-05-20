@@ -10,6 +10,8 @@ Pre-installation steps
 * If your shop is using compilation (you can check it in :menuselection:`System --> Tools --> Compilation`), disable it please before proceeding to install.
 
 
+.. _installation-process:
+
 Installation process
 --------------------
 
@@ -44,3 +46,50 @@ Voila! The **Login and Pay with Amazon** extension shall be installed now. You c
 
 Upgrade
 -------
+
+Pre-upgrade steps
+~~~~~~~~~~~~~~~~~
+
+1. Create a backup of your shop before proceeding to install.
+2. If your shop is using compilation (you can check it in :menuselection:`System --> Tools --> Compilation`), disable it please before proceeding to install.
+
+
+Plugin version 2.0.x (installed after September 2017) to 3.x
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note:: In a nutshell: You can simply use Magento connect to upgrade to the most recent plugin version.
+
+**Required steps:**
+
+1. Log in to the admin area of your Magento 1 shop.
+2. Go to :menuselection:`System --> Magento Connect --> Magento Connect Manager` and enter your admin credentials to get logged in.
+3. Click on :guilabel:`Check for Upgrades` within the :guilabel:`Extensions` tab.
+4. For the module `creativestyle+Creativestyle_AmazonPayments` select the most recent version and click on :guilabel:`Commit changes`.
+5. After installation go back to admin area (link on top :guilabel:`Return to Admin`).
+6. Go to :menuselection:`System --> Cache Management`.
+7. Click on the button :guilabel:`Flush Magento Cache` (top right).
+8. Click on the button :guilabel:`Flush JavaScript/ CSS Cache` (bottom left).
+9. If you have disabled compiler in pre-installation stage, you can go now to :menuselection:`System --> Tools --> Compilation`, recompile and enable compiler again.
+10. Logout from the Magento admin and login again.
+11. Test if you can place an order with Amazon Pay. If you have any trouble please contact our support.
+
+Plugin version 1.x (installed before September 2017, including version 2.0.0) to 3.x
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. note:: In a nutshell: You have to uninstall the previous plugin version first. Then install the most recent version with a new extension key obtained from Magento Marketplace.
+
+**Required steps:**
+
+1. Log in to the admin area of your Magento 1 shop.
+2. Go to :menuselection:`System --> Magento Connect --> Magento Connect Manager` and enter your admin credentials to get logged in.
+3. Search the package `creativestyle+Creativestyle_AmazonPayments`, select :guilabel:`Uninstall` as action, then click on the :guilabel:`Commit changes` button below.
+4. Install the most recent version according to our installation guide: :ref:`installation-process`.
+5. Test if you can place an order with Amazon Pay. If you have any trouble please contact our support.
+
+
+Post-upgrade steps
+~~~~~~~~~~~~~~~~~~
+
+.. attention:: The following instruction concerns the shops that rely on the order workflow (eg. 3rd party ERP implementation, etc.) and upgrades the extension from version either 1.x or 2.x to 3.x. Version 3.0.2 does not bring any changes to the templates or layout definitions. The only frontend related change has been introduced in the main JS application `js/creativestyle/amazonpayments.min.js` file.
+
+Version 3.0.2 comes with a significant change to the payment processing workflow. Prior to version 3.x the payment authorization was requested during placing the order (i.e. right after clicking :guilabel:`Save order` button in the checkout), thus in synchronous and optimized (when there wasn't transaction timed out decline) authorization mode, the order ended up with the immediate authorization result. Since the Strong Customer Authentication (derived from the PSD2 directive) was introduced in version 3.0.2, the authorization is requested after the order is actually placed. Thus, it may happen that the order payment remains unauthorized for a longer time unless the buyer finishes his Multi-Factor Authentication challenge. This change has to be considered for passing the order to the fulfillment process, to avoid fulfilling the orders that haven't been actually paid. As stated in :ref:`workflow-authorization` section, it is always advised to start fulfilling the order after the authorization is confirmed, which, in the default configuration, is reflected by the "Processing" order status.
