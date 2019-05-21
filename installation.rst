@@ -50,15 +50,14 @@ Upgrade
 Pre-upgrade steps
 ~~~~~~~~~~~~~~~~~
 
-1. Create a backup of your shop before proceeding to install.
-2. If your shop is using compilation (you can check it in :menuselection:`System --> Tools --> Compilation`), disable it please before proceeding to install.
+1. Create a backup of your shop before proceeding to upgrade.
+2. If your shop utilises compilation (you can check it in :menuselection:`System --> Tools --> Compilation`), disable it please before proceeding to upgrade.
 
 
-Plugin version 2.0.x (installed after September 2017) to 3.x
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Version 2.0.x (installed after September 2017) to 3.x
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: In a nutshell
-   You can simply use Magento connect to upgrade to the most recent plugin version.
+.. note:: **In a nutshell**: You can simply use Magento Connect to upgrade to the most recent plugin version.
 
 **Required steps:**
 
@@ -74,11 +73,10 @@ Plugin version 2.0.x (installed after September 2017) to 3.x
 10. Logout from the Magento admin and login again.
 11. Test if you can place an order with Amazon Pay. If you have any trouble please contact our support.
 
-Plugin version 1.x (installed before September 2017, including version 2.0.0) to 3.x
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Version 1.x (installed before September 2017, including version 2.0.0) to 3.x
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note:: In a nutshell
-   You have to uninstall the previous plugin version first. Then install the most recent version with a new extension key obtained from Magento Marketplace.
+.. note:: **In a nutshell**: You have to uninstall the previous plugin version first. Then install the most recent version with a new extension key obtained from Magento Marketplace.
 
 **Required steps:**
 
