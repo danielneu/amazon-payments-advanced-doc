@@ -31,6 +31,23 @@ Extension features
 Changelog
 ---------
 
+Version 3.0.8
+~~~~~~~~~~~~~
+
+Improvements & changes
+''''''''''''''''''''''
+
+* Implemented JS versioning
+* Added support for newsletter subscription in the checkout
+
+Version 3.0.6
+~~~~~~~~~~~~~
+
+Fixes
+'''''
+
+* Fixed redirect URL issues for the redirect authentication experience
+
 Version 3.0.2
 ~~~~~~~~~~~~~
 
