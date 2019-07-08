@@ -95,3 +95,16 @@ Post-upgrade steps
 Version 3.0.2 comes with a significant change to the payment processing workflow. Prior to version 3.x the payment authorization was requested during placing the order (i.e. right after clicking :guilabel:`Save order` button in the checkout), thus in synchronous and optimized (when there wasn't transaction timed out decline) authorization mode, the order ended up with the immediate authorization result.
 
 Since the Strong Customer Authentication (derived from the PSD2 directive) was introduced in version 3.0.2, the authorization is requested after the order is actually placed. Thus, it may happen that the order payment remains unauthorized for a longer time unless the buyer finishes his Multi-Factor Authentication challenge. This change has to be considered for passing the order to the fulfillment process, to avoid fulfilling the orders that haven't been actually paid. As stated in :ref:`workflow-authorization` section, it is always advised to start fulfilling the order after the authorization is confirmed, which, in the default configuration, is reflected by the "Processing" order status.
+
+
+Upgrade to 3.x troubleshooting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**After upgrade to 3.x, when the buyer clicks Amazon Pay button in the cart, he is redirected to the customer dashboard instead of the checkout.**
+
+1. Please make sure that your webserver serves the most recent version of the `js/creativestyle/amazonpayments.min.js` file. Some webservers (as well as CDNs) are caching static assets, so it may happen that your shop serves outdated version of the frontend JS application.
+
+2. If you are using custom layout or template files for Amazon Pay, make sure that your customizations are compliant with the recent changes in the extension. The easiest way to check is your customization is the case is to delete following files as after refreshing Magento cache, see if this resolves your issue:
+* app/design/frontend/CUSTOMPACKAGE/CUSTOMTHEME/layout/amazonpayments.xml
+* app/design/frontend/CUSTOMPACKAGE/CUSTOMTHEME/template/creativestyle/amazonpayments/js.phtml
+* app/design/frontend/CUSTOMPACKAGE/CUSTOMTHEME/template/creativestyle/amazonpayments/login/redirect.phtml
