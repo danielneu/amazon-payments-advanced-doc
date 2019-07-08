@@ -105,6 +105,7 @@ Upgrade to 3.x troubleshooting
 1. Please make sure that your webserver serves the most recent version of the `js/creativestyle/amazonpayments.min.js` file. Some webservers (as well as CDNs) are caching static assets, so it may happen that your shop serves outdated version of the frontend JS application.
 
 2. If you are using custom layout or template files for Amazon Pay, make sure that your customizations are compliant with the recent changes in the extension. The easiest way to check is your customization is the case is to delete following files as after refreshing Magento cache, see if this resolves your issue:
+
 * app/design/frontend/CUSTOMPACKAGE/CUSTOMTHEME/layout/amazonpayments.xml
 * app/design/frontend/CUSTOMPACKAGE/CUSTOMTHEME/template/creativestyle/amazonpayments/js.phtml
 * app/design/frontend/CUSTOMPACKAGE/CUSTOMTHEME/template/creativestyle/amazonpayments/login/redirect.phtml
