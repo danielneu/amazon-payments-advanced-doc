@@ -69,8 +69,6 @@ You can select the desired payment action taken after an order is placed. Availa
 * `Authorize & capture` - order reference creation is followed by automatic authorization and capture request. It is mandatory that you get white-listed for this feature by Amazon Payments first. Do not activate this option without contacting Amazon Payments first.
 * `ERP mode` - same as `Manual authorization`, but further payment processing (authorization, capture, IPN notifications handling) is blocked in Magento. In this mode, it is assumed that after order reference creation rest of the payment processing steps will be handled by merchant's external ERP system.
 
-.. warning:: Please use `Authorize & capture` method only in case you are shipping goods on the same day they are ordered and you have been white-listed for this service.
-
 .. warning:: Please do not use `ERP mode` unless your ERP system supports Amazon Payments transactions processing.
 
 .. _configuration-authorization-processing-mode:
