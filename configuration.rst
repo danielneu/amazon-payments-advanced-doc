@@ -66,7 +66,7 @@ You can select the desired payment action taken after an order is placed. Availa
 
 * `Manual authorization` - the order reference is created only. Authorization must be requested manually by clicking `Authorize` button on the order preview page in Magento admin.
 * `Authorize` (default) - order reference creation is followed by automatic authorization request. Capture must be requested manually by creating an invoice with `Capture online` option selected.
-* `Authorize & capture` - order reference creation is followed by automatic authorization and capture request. It is mandatory that you get white-listed for this feature by Amazon Payments first. Do not activate this option without contacting Amazon Payments first.
+* `Authorize & capture` - order reference creation is followed by automatic authorization and capture request.
 * `ERP mode` - same as `Manual authorization`, but further payment processing (authorization, capture, IPN notifications handling) is blocked in Magento. In this mode, it is assumed that after order reference creation rest of the payment processing steps will be handled by merchant's external ERP system.
 
 .. warning:: Please do not use `ERP mode` unless your ERP system supports Amazon Payments transactions processing.
