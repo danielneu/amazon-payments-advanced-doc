@@ -186,6 +186,22 @@ In this option you can set size in pixels (width and height) of Amazon wallet wi
 
 ----
 
+.. _configuration-pay-alexa-notifications:
+
+Alexa Delivery Notifications
+--------------------------------------------------
+Alexa delivery notifications for Amazon Pay merchants allow you to pro-actively inform your customers if their order is on its way or has arrived.
+After enabling the feature, generate or upload an existing key pair into the configuration fields `Private Key` and `Public Key`. If you are having trouble with the automatic generation inside the Magento admin, please follow this `guide <https://developer.amazon.com/de/docs/amazon-pay-automatic/delivery-notifications.html>`_.
+
+You will need to reach out to Amazon Pay in order to receive your `Public Key ID` at this time. Please use the `contact` link and simply send the pre-defined email. You should recieve your `Public Key ID` within 1-2 business days. Once received, add the `Public Key ID` into the corresponding field.
+
+Configure sour carriers using the `Carrier codes` form by selecting your available carriers and assign them to the matching one in the Amazon Pay carrier list.
+
+.. image:: /images/configuration_screenshot_10.png
+
+----
+
+
 .. _configuration-login-appearance-settings:
 
 Appearance Settings for Login and Pay with Amazon
