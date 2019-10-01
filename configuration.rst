@@ -197,7 +197,7 @@ You will need to reach out to Amazon Pay in order to receive your `Public Key ID
 
 Configure sour carriers using the `Carrier codes` form by selecting your available carriers and assign them to the matching one in the Amazon Pay carrier list.
 
-.. image:: /images/1.7.2/configuration_screenshot_10.png
+.. image:: /images/configuration_screenshot_10.png
 
 ----
 
