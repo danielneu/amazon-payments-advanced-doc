@@ -195,10 +195,11 @@ After enabling the feature, generate or upload an existing key pair into the con
 
 You will need to reach out to Amazon Pay in order to receive your `Public Key ID` at this time. Please use the `contact` link and simply send the pre-defined email. You should recieve your `Public Key ID` within 1-2 business days. Once received, add the `Public Key ID` into the corresponding field.
 
-Configure sour carriers using the `Carrier codes` form by selecting your available carriers and assign them to the matching one in the Amazon Pay carrier list.
-
 .. image:: /images/configuration_screenshot_10.png
 
+Configure your carriers using the `Carrier codes` form by selecting your available carriers and assign them to the matching one in the Amazon Pay carrier list.
+
+.. image:: /images/configuration_screenshot_11.gif
 ----
 
 

@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Amazon Pay - extension for Magento 1.x EU'
-copyright = u'2014 - 2018 creativestyle GmbH'
+copyright = u'2014 - 2019 creativestyle GmbH'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
