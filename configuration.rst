@@ -2,9 +2,9 @@
 
 Configuration
 =============
-After the successful installation you can proceed to the configuration. In Magento admin go to :menuselection:`creativestyle --> Login and Pay with Amazon --> Settings` (or :menuselection:`System --> Configuration --> Amazon Payments` tab).
+After the successful installation you can proceed to the configuration. In Magento admin go to :menuselection:`creativestyle --> Amazon Pay and Login with Amazon --> Settings` (or :menuselection:`System --> Configuration --> Amazon Payments` tab).
 
-.. image:: /images/1.7.2/configuration_screenshot_1.png
+.. image:: /images/configuration_screenshot_1.png
 
 Available options are grouped in following sections:
 

@@ -23,3 +23,4 @@ Proudly provided by:
    testing
    faq
    troubleshooting
+   changelog

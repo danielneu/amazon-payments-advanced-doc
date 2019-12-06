@@ -47,6 +47,25 @@ The created order will be transferred to Amazon and will appear in your Magento 
 
 .. note:: You may notice in the Magento admin that the billing address may be incorrect at this point (as mentioned in the introduction to this chapter). That's true if the billing differs from the shipping data. The only available payment object at the time of placing order is the OrderReference, which, unfortunately, doesn't provide billing data and thus shipping address must be used to meet Magento requirements concerning order data. The billing address will be updated as soon as authorization is confirmed by Amazon Payments. Keep also in mind that the billing address is available only for the sellers that provided a valid VAT number in Amazon Seller Central.
 
+.. _workflow-multicurrency:
+
+Multicurrency support
+---------------------
+
+**Amazon Pay** extension supports multicurrency payments on the website level. Website is the top level organizational unit in Magento, it may share customer accounts, shipping and payment methods. To offer multicurrency support that is provided by Amazon Pay service in your Magento shop, you have to create a separate website for each currency you plan to offer in your shop, with the selected currency set as a base currency in Magento settings.
+
+.. image:: /images/multicurrency_websites.png
+
+By default the base currency is set globally in Magento, to make it available on the website level, please go to :menuselection:`System --> Configuration --> Catalog --> Catalog --> Price --> Catalog Price Scope` and set its value to `Website`.
+
+.. image:: /images/catalog_price_scope.png
+
+Next go to :menuselection:`System --> Configuration --> General --> Currency Setup --> Currency Options --> Base Currency` and set its value to the selected currency for each of the websites you created previously to offer multicurrency support for your customers. The website configuration scope can be changed by selecting appropriate entry in the `Current Configuration Scope` dropdown list in the top right corner of the configuration page.
+
+.. image:: /images/website_currency_setup.png
+
+.. note:: Please note, that multicurrency support in the extension doesn't use Display Currency setting, which may be set on the store view level. Display currency is used just for the storefront presentation purposes and doesn’t play any role in further order post-processing, because all transactions are processed using base currency. Such a behavior is implemented in Magento core classes and Amazon Pay extension do not break this rule.
+
 .. _workflow-authorization:
 
 Payment authorization

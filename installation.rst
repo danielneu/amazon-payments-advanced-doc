@@ -102,7 +102,7 @@ Upgrade to 3.x troubleshooting
 
 **After upgrade to 3.x, when the buyer clicks Amazon Pay button in the cart, he is redirected to the customer dashboard instead of the checkout.**
 
-1. Please make sure that your webserver serves the most recent version of the `js/creativestyle/amazonpayments.min.js` file. Some webservers (as well as CDNs) are caching static assets, so it may happen that your shop serves outdated version of the frontend JS application.
+1. Please make sure that your webserver serves the most recent version of the `js/creativestyle/amazonpayments.min.js` file. Some webservers (as well as CDNs) are caching static assets, so it may happen that your shop serves an outdated version of the frontend JS application.
 
 2. If you are using custom layout or template files for Amazon Pay, make sure that your customizations are compliant with the recent changes in the extension. The easiest way to check is your customization is the case is to delete following files as after refreshing Magento cache, see if this resolves your issue:
 
