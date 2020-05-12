@@ -191,7 +191,7 @@ In this option you can set size in pixels (width and height) of Amazon wallet wi
 Alexa Delivery Notifications
 --------------------------------------------------
 Alexa delivery notifications for Amazon Pay merchants allow you to pro-actively inform your customers if their order is on its way or has arrived.
-After enabling the feature, you will need to get your `Public Key ID` to be able to interact with the Amazon Pay Delivery Tracker APIs. To do so, please follow the instructions given in this `guide <https://developer.amazon.com/de/docs/amazon-pay-automatic/delivery-notifications.html#get-your-public-key-id`_.
+After enabling the feature, you will need to get your `Public Key ID` to be able to interact with the Amazon Pay Delivery Tracker APIs. To do so, please follow the instructions given in this `guide <https://developer.amazon.com/de/docs/amazon-pay-automatic/delivery-notifications.html#get-your-public-key-id>`_.
 
 Once done, you will have your `Private Key` and `Public Key ID`. Please enter them into the corresponding fields. If your version still has a `Public Key` field, please simply ignore it and continue.
 
