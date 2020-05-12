@@ -191,15 +191,17 @@ In this option you can set size in pixels (width and height) of Amazon wallet wi
 Alexa Delivery Notifications
 --------------------------------------------------
 Alexa delivery notifications for Amazon Pay merchants allow you to pro-actively inform your customers if their order is on its way or has arrived.
-After enabling the feature, generate or upload an existing key pair into the configuration fields `Private Key` and `Public Key`. If you are having trouble with the automatic generation inside the Magento admin, please follow this `guide <https://developer.amazon.com/de/docs/amazon-pay-automatic/delivery-notifications.html>`_.
+After enabling the feature, you will need to get your `Public Key ID` to be able to interact with the Amazon Pay Delivery Tracker APIs. To do so, please follow the instructions given in this `guide <https://developer.amazon.com/de/docs/amazon-pay-automatic/delivery-notifications.html#get-your-public-key-id`_.
 
-You will need to reach out to Amazon Pay in order to receive your `Public Key ID` at this time. Please use the `contact` link and simply send the pre-defined email. You should recieve your `Public Key ID` within 1-2 business days. Once received, add the `Public Key ID` into the corresponding field.
+Once done, you will have your `Private Key` and `Public Key ID`. Please enter them into the corresponding fields. If your version still has a `Public Key` field, please simply ignore it and continue.
 
 .. image:: /images/configuration_screenshot_10.png
 
 Configure your carriers using the `Carrier codes` form by selecting your available carriers and assign them to the matching one in the Amazon Pay carrier list.
 
 .. image:: /images/configuration_screenshot_11.gif
+
+Save your work and you are done. To verify, if everything is working as expected, simply mark an AmazonPay order as shipped and add a tracking code to the shipment. The API Log should show a successfull delivery tracker request (Status Code: 200).
 ----
 
 
