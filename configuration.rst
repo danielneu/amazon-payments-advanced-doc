@@ -202,6 +202,7 @@ Configure your carriers using the `Carrier codes` form by selecting your availab
 .. image:: /images/configuration_screenshot_11.gif
 
 Save your work and you are done. To verify, if everything is working as expected, simply mark an AmazonPay order as shipped and add a tracking code to the shipment. The API Log should show a successfull delivery tracker request (Status Code: 200).
+
 ----
 
 
