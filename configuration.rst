@@ -1,3 +1,6 @@
+.. note::
+   This extension is under the active development even though Adobe dropped the support for Magento 1.x e-commerce platform (Jul 1st, 2020). Creativestyle will provide the necessary updates and support for this extension as long as this extension will be used by the active Amazon Pay merchants.
+
 .. _configuration:
 
 Configuration
@@ -200,6 +203,7 @@ You will need to reach out to Amazon Pay in order to receive your `Public Key ID
 Configure your carriers using the `Carrier codes` form by selecting your available carriers and assign them to the matching one in the Amazon Pay carrier list.
 
 .. image:: /images/configuration_screenshot_11.gif
+
 ----
 
 

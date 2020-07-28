@@ -1,3 +1,6 @@
+.. note::
+   This extension is under the active development even though Adobe dropped the support for Magento 1.x e-commerce platform (Jul 1st, 2020). Creativestyle will provide the necessary updates and support for this extension as long as this extension will be used by the active Amazon Pay merchants.
+
 Overview
 ========
 
@@ -9,7 +12,7 @@ The extension is a pure payment solution. No item level is communicated to Amazo
 Getting the extension
 ---------------------
 
-In your browser, open the `Magento Marketplace <https://marketplace.magento.com/creativestyle-creativestyle-amazonpayments.html>`_ page, add it to your cart, and go to checkout (this will be free of charge). On the order confirmation page click on `Install` to receive the access key (you may need to log in with your Magento account). Copy the access key.
+You can install the extension either via Magento Connect Manager or manually, downloading the installation package from `Creativestyle Magento 1.x connect channel <https://connect.creativestyle.de/Creativestyle_AmazonPayments>`_.
 
 Refer to the :ref:`installation` section to get more details concerning installation procedure.
 
